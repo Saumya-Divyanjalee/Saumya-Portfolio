@@ -1,16 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+    <title>Saumya-Portfolio</title>
+
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name ="keywords" content="Saumya Portfolio,HTML,CSS,JavaScript,saumizcodex,saumya,divyanjalee">
+    <meta name ="description" content="This is my portfolio website-Saumya">
+    <meta name ="author" content="Saumya Divyanjalee">
+    <meta name ="viewport" content="width=device-width, initial-scale=1.0"><!--essential for media queries-->
+
+    <!--favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double:wght@100..900&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+
+    <style>
+
+        body{
+            background: #020024;
+            background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%);
+        }
+
+
+        h1,h2{
+            text-align: center;
+            position: absolute;
+            transform: translate(-50%, -50%);
+
+
+        }
+
+
+
+        #heroh1{
+            font-family: "IBM Plex Mono", monospace;
+            font-weight: bold;
+            font-style: normal;
+            text-align: center;
+            font-size: 55px;
+            top: 30%;
+            left: 50%;
+            background: #ffffff;
+            background: linear-gradient(132deg, rgba(255, 255, 255, 1) 0%, rgba(136, 252, 241, 1) 50%, rgba(250, 155, 242, 1) 100%);
+            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text;
+        }
+        #heroh2{
+            font-family: "Roboto Mono", monospace;
+            font-optical-sizing: auto;
+            font-weight: <weight>,bold;
+            font-style: normal;
+            text-align: center;
+            font-size: 25px;
+            top: 50%;
+            left: 50%;
+            margin-top: 15px;
+            background: #79e8df;
+            background: linear-gradient(90deg, rgba(121, 232, 223, 1) 0%, rgba(255, 153, 219, 1) 50%, rgba(83, 232, 237, 1) 100%);
+            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text;
+
+
+        }
+        /*Tablet*/
+        @media (max-width: 768px) {
+            #heroh1{font-size: 40px}
+            #heroh2{font-size: 20px}
+        }
+
+        /*Mobile*/
+        @media (max-width: 480px) {
+            #heroh1{font-size: 20px}
+            #heroh2{font-size: 15px;}
+        }
+
+
+    </style>
+
+
 </head>
 <body>
+<header id ="header">
+<section id ="navbar"></section>
 
-<h1>Saumya Divyanjalee</h1>
+</header>
 
-<p>
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-</p>
+
+<section id = "hero" class="star-bg">
+    <div id = "hero-text">
+        <h1 id="heroh1">I'm
+            <strong><em>Saumya<em></em> Divyanjalee</strong></h1>
+        <h2 id="heroh2">Passionate about turning code into solutions, solving problems with creativity, and constantly exploring new technologies.</h2>
+
+
+
+
+    </div>
+
+
+</section>
+<section id = "footer"></section>
+
+
 
 </body>
 </html>
