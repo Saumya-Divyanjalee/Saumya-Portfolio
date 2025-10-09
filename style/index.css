@@ -1,0 +1,206 @@
+/* --- Body --- */
+body {
+    margin: 0;
+    background: #040038;
+    background: linear-gradient(90deg, rgba(4, 0, 56, 1) 0%, rgba(0, 0, 0, 1) 50%, rgba(3, 0, 33, 1) 100%);z          font-family: "Exo 2", sans-serif;
+    color: white;
+    scroll-behavior: smooth;
+}
+
+#navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 80px;
+    background: rgba(10, 10, 25, 0.8);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 15px rgba(0, 255, 255, 0.1);
+    z-index: 1000;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+
+header {
+    padding-top: 100px;
+}
+
+/* --- Logo --- */
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+    border: 3px solid transparent;
+    background: #f035ed;
+    background: linear-gradient(90deg, rgba(240, 53, 237, 1) 0%, rgba(77, 232, 214, 1) 50%, rgba(255, 97, 234, 1) 100%);
+}
+
+.logo span {
+    font-size: 1.4rem;
+    font-family: "Atomic Age", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    background: #ff8cfd;
+    background: linear-gradient(90deg, rgba(255, 140, 253, 1) 0%, rgba(140, 255, 242, 1) 50%, rgba(255, 140, 240, 1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 1px;
+}
+
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-family: "Roboto Slab", serif;
+    font-optical-sizing: auto;
+    font-weight:400;
+    font-style: normal;
+    font-size: 20px;
+    padding: 8px 18px;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+
+nav ul li a::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 25px;
+    padding: 2px;
+    background: linear-gradient(90deg,rgba(240, 53, 237, 1) 0%, rgba(77, 232, 214, 1) 50%, rgba(255, 97, 234, 1) 100%);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+nav ul li a:hover::before {
+    opacity: 1;
+}
+
+nav ul li a:hover {
+    color: #79e8df;
+}
+
+/* --- Mobile Menu --- */
+.menu-icon {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
+}
+
+#burger {
+    display: none;
+}
+
+
+@media (max-width: 900px) {
+    #navbar {
+        padding: 10px 30px; /* reduce padding for small screens */
+    }
+
+    nav ul {
+        display: none;
+        position: absolute;
+        top: 70px;
+        right: 25px;
+        background: rgba(15, 15, 30, 0.97);
+        flex-direction: column;
+        border-radius: 12px;
+        padding: 20px;
+        width: 200px;
+        box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+    }
+
+    #burger:checked + .menu-icon + nav ul {
+        display: flex;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+    nav ul li a {
+        padding: 12px 0;
+        text-align: center;
+    }
+}
+
+/* --- Hero Section --- */
+#hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+    flex-direction: column;
+    padding: 0 20px;
+}
+
+#heroh1 {
+    font-weight: 700;
+    font-size: 55px;
+    background: linear-gradient(132deg, rgba(255,255,255,1) 0%, rgba(136,252,241,1) 50%, rgba(250,155,242,1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 0;
+}
+
+#heroh11 {
+    font-weight: 700;
+    font-size: 55px;
+    color: lightseagreen;
+    margin: 10px 0;
+}
+
+#heroh2 {
+    font-family: "Exo 2", sans-serif;
+    font-weight: 500;
+    font-size: 22px;
+    background: linear-gradient(90deg, rgba(121,232,223,1) 0%, rgba(255,153,219,1) 50%, rgba(83,232,237,1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    max-width: 800px;
+    margin-top: 15px;
+    line-height: 1.5;
+}
+
+/* --- Responsive Text --- */
+@media (max-width: 768px) {
+    #heroh1, #heroh11 { font-size: 40px; }
+    #heroh2 { font-size: 18px; }
+}
+
+@media (max-width: 480px) {
+    #heroh1, #heroh11 {
+        font-size: 28px;
+    }
+
+    #heroh2 {
+        font-size: 15px;
+    }
+}
