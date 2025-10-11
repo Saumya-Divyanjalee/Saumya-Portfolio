@@ -8,7 +8,7 @@
     <meta name ="keywords" content="Saumya Portfolio,HTML,CSS,JavaScript,saumizcodex,saumya,divyanjalee">
     <meta name ="description" content="This is my portfolio website-Saumya">
     <meta name ="author" content="Saumya Divyanjalee">
-    <meta name ="viewport" content="width=device-width, initial-scale=1.0"><!--essential for media queries--> .
+    <meta name ="viewport" content="width=device-width, initial-scale=1.0">
 
 
     <!--favicon-->
@@ -20,12 +20,17 @@
     <link rel="stylesheet" href="style/index.css">
     <link href="https://fonts.googleapis.com/css2?family=Atomic+Age&family=Bitcount+Grid+Double:wght@100..900&family=Exo+2:ital,wght@0,100..900;1,100..900&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Oswald:wght@200..700&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Young+Serif&display=swap" rel="stylesheet">
 
+    <link rel="stylesheet" href="assets/lib/fontawesome/css/all.min.css">
 
-    <style>/* --- Body --- */
+
+    <style>
+
+   /* --- Body --- */
     body {
         margin: 0;
-        background: #040038;
-        background: linear-gradient(90deg, rgba(4, 0, 56, 1) 0%, rgba(0, 0, 0, 1) 50%, rgba(3, 0, 33, 1) 100%);z          font-family: "Exo 2", sans-serif;
+        background: #020024;
+        background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(1, 15, 41, 1) 100%, rgba(0, 0, 0, 1) 84%);
+        font-family: "Exo 2", sans-serif;
         color: white;
         scroll-behavior: smooth;
     }
@@ -39,7 +44,8 @@
         align-items: center;
         justify-content: space-between;
         padding: 12px 80px;
-        background: rgba(10, 10, 25, 0.8);
+        background: #020024;
+        background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(1, 15, 41, 1) 100%, rgba(0, 0, 0, 1) 84%);
         backdrop-filter: blur(10px);
         box-shadow: 0 4px 15px rgba(0, 255, 255, 0.1);
         z-index: 1000;
@@ -52,37 +58,53 @@
         padding-top: 100px;
     }
 
-    /* --- Logo --- */
-    .logo {
-        display: flex;
-        align-items: center;
-    }
+   /* --- Logo --- */
+   .logo {
+       display: flex;
+       align-items: center;
+   }
 
-    .logo img {
-        width: 48px;
-        height: 48px;
-        border-radius: 50%;
-        object-fit: cover;
-        margin-right: 10px;
-        border: 3px solid transparent;
-        background: #f035ed;
-        background: linear-gradient(90deg, rgba(240, 53, 237, 1) 0%, rgba(77, 232, 214, 1) 50%, rgba(255, 97, 234, 1) 100%);
-    }
+   .logo img {
+       width: 48px;
+       height: 48px;
+       border-radius: 50%;
+       object-fit: cover;
+       margin-right: 10px;
 
-    .logo span {
-        font-size: 1.4rem;
-        font-family: "Atomic Age", system-ui;
-        font-weight: 400;
-        font-style: normal;
-        background: #ff8cfd;
-        background: linear-gradient(90deg, rgba(255, 140, 253, 1) 0%, rgba(140, 255, 242, 1) 50%, rgba(255, 140, 240, 1) 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        letter-spacing: 1px;
-    }
+       /* border effect */
+       padding: 3px; /* important for inner spacing */
+       background: linear-gradient(90deg, #f035ed, #4de8d6, #ff61ea);
+       background-size: 300%; /* allow animation movement */
+       animation: borderMove 3s linear infinite; /* add motion */
+   }
+
+   /* Animate gradient background */
+   @keyframes borderMove {
+       0% {
+           background-position: 0% 50%;
+       }
+       50% {
+           background-position: 100% 50%;
+       }
+       100% {
+           background-position: 0% 50%;
+       }
+   }
 
 
-    nav ul {
+   .logo span {
+       font-size: 1.4rem;
+       font-family: "Atomic Age", system-ui;
+       font-weight: 400;
+       font-style: normal;
+       background: linear-gradient(90deg, #ff8cfd, #8cfff2, #ff8cf0);
+       -webkit-background-clip: text;
+       -webkit-text-fill-color: transparent;
+       letter-spacing: 1px;
+   }
+
+
+   nav ul {
         display: flex;
         list-style: none;
         gap: 25px;
@@ -111,8 +133,8 @@
         inset: 0;
         border-radius: 25px;
         padding: 2px;
-        background: linear-gradient(90deg,rgba(240, 53, 237, 1) 0%, rgba(77, 232, 214, 1) 50%, rgba(255, 97, 234, 1) 100%);
-        -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        background: #14f3ff;
+        background: linear-gradient(90deg, rgba(20, 243, 255, 1) 0%, rgba(245, 39, 193, 1) 35%, rgba(20, 216, 255, 1) 100%);     /*-webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);*/
         -webkit-mask-composite: xor;
         mask-composite: exclude;
         pointer-events: none;
@@ -125,11 +147,12 @@
     }
 
     nav ul li a:hover {
-        color: #79e8df;
+        color: #44FCFC;
     }
 
     /* --- Mobile Menu --- */
-    .menu-icon {
+    .burger-menu {
+        margin-left: auto;
         display: none;
         font-size: 30px;
         cursor: pointer;
@@ -159,11 +182,11 @@
             box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
         }
 
-        #burger:checked + .menu-icon + nav ul {
+        #burger:checked + .burger-menu + nav ul {
             display: flex;
         }
 
-        .menu-icon {
+        .burger-menu {
             display: block;
         }
 
@@ -179,14 +202,20 @@
         justify-content: center;
         align-items: center;
         text-align: center;
-        height: 100vh;
+        height: 100%;
+        position: absolute;
+        margin:auto;
+        top:20px;
+        left: 0;
+        right: 0;
+        bottom: 0;
         flex-direction: column;
         padding: 0 20px;
     }
 
     #heroh1 {
         font-weight: 700;
-        font-size: 55px;
+        font-size: 45px;
         background: linear-gradient(132deg, rgba(255,255,255,1) 0%, rgba(136,252,241,1) 50%, rgba(250,155,242,1) 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -226,7 +255,11 @@
         #heroh2 {
             font-size: 15px;
         }
-    }</style>
+    }
+
+
+
+    </style>
 
 
 
@@ -241,7 +274,7 @@
 </div>
 
     <input type="checkbox" id="burger">
-    <label for="burger" class="burger-menu"></label>
+    <label for="burger" class="burger-menu"><i class="fa-solid fa-bars" style="color: #00e1ff;"></i></label>
 
     <nav>
         <ul>
@@ -269,7 +302,7 @@
 
 
 </section>
-<section id = "footer"></section>
+
 
 
 
