@@ -24,238 +24,267 @@
 
 
     <style>
-
-   /* --- Body --- */
-    body {
-        margin: 0;
-        background: #020024;
-        background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(1, 15, 41, 1) 100%, rgba(0, 0, 0, 1) 84%);
-        font-family: "Exo 2", sans-serif;
-        color: white;
-        scroll-behavior: smooth;
-    }
-
-    #navbar {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 12px 80px;
-        background: #020024;
-        background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(1, 15, 41, 1) 100%, rgba(0, 0, 0, 1) 84%);
-        backdrop-filter: blur(10px);
-        box-shadow: 0 4px 15px rgba(0, 255, 255, 0.1);
-        z-index: 1000;
-        transition: all 0.3s ease;
-        box-sizing: border-box;
-    }
-
-
-    header {
-        padding-top: 100px;
-    }
-
-   /* --- Logo --- */
-   .logo {
-       display: flex;
-       align-items: center;
-   }
-
-   .logo img {
-       width: 48px;
-       height: 48px;
-       border-radius: 50%;
-       object-fit: cover;
-       margin-right: 10px;
-
-       /* border effect */
-       padding: 3px; /* important for inner spacing */
-       background: linear-gradient(90deg, #f035ed, #4de8d6, #ff61ea);
-       background-size: 300%; /* allow animation movement */
-       animation: borderMove 3s linear infinite; /* add motion */
-   }
-
-   /* Animate gradient background */
-   @keyframes borderMove {
-       0% {
-           background-position: 0% 50%;
-       }
-       50% {
-           background-position: 100% 50%;
-       }
-       100% {
-           background-position: 0% 50%;
-       }
-   }
-
-
-   .logo span {
-       font-size: 1.4rem;
-       font-family: "Atomic Age", system-ui;
-       font-weight: 400;
-       font-style: normal;
-       background: linear-gradient(90deg, #ff8cfd, #8cfff2, #ff8cf0);
-       -webkit-background-clip: text;
-       -webkit-text-fill-color: transparent;
-       letter-spacing: 1px;
-   }
-
-
-   nav ul {
-        display: flex;
-        list-style: none;
-        gap: 25px;
-        margin: 0;
-        padding: 0;
-    }
-
-    nav ul li a {
-        text-decoration: none;
-        color: white;
-        font-family: "Roboto Slab", serif;
-        font-optical-sizing: auto;
-        font-weight:400;
-        font-style: normal;
-        font-size: 20px;
-        padding: 8px 18px;
-        border-radius: 25px;
-        transition: all 0.3s ease;
-        position: relative;
-    }
-
-
-    nav ul li a::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        border-radius: 25px;
-        padding: 2px;
-        background: #14f3ff;
-        background: linear-gradient(90deg, rgba(20, 243, 255, 1) 0%, rgba(245, 39, 193, 1) 35%, rgba(20, 216, 255, 1) 100%);     /*-webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);*/
-        -webkit-mask-composite: xor;
-        mask-composite: exclude;
-        pointer-events: none;
-        opacity: 0;
-        transition: opacity 0.3s;
-    }
-
-    nav ul li a:hover::before {
-        opacity: 1;
-    }
-
-    nav ul li a:hover {
-        color: #44FCFC;
-    }
-
-    /* --- Mobile Menu --- */
-    .burger-menu {
-        margin-left: auto;
-        display: none;
-        font-size: 30px;
-        cursor: pointer;
-        color: white;
-    }
-
-    #burger {
-        display: none;
-    }
-
-
-    @media (max-width: 900px) {
-        #navbar {
-            padding: 10px 30px; /* reduce padding for small screens */
+        html{
+            scroll-behavior: smooth;
         }
-
-        nav ul {
-            display: none;
-            position: absolute;
-            top: 70px;
-            right: 25px;
-            background: rgba(15, 15, 30, 0.97);
-            flex-direction: column;
-            border-radius: 12px;
-            padding: 20px;
-            width: 200px;
-            box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+        body{
+            margin: 0;
+            background: #020024;
+            background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(1, 15, 41, 1) 100%, rgba(0, 0, 0, 1) 84%);
+            color: white;
+            font-family: "IBM Plex Mono", monospace;
+            font-weight: 400;
+            font-style: normal;
         }
-
-        #burger:checked + .burger-menu + nav ul {
+        #nav-section{
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
             display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 80px;
+            background: #020024;
+            background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(1, 15, 41, 1) 100%, rgba(0, 0, 0, 1) 84%);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            box-sizing: border-box;
+        }
+        header{
+            padding-top: 100px;
         }
 
-        .burger-menu {
-            display: block;
+        /*Logo*/
+        .logo{
+            display: flex;
+            align-items: center;
         }
 
-        nav ul li a {
-            padding: 12px 0;
+        .logo img{
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 10px;
+            padding: 3px;
+            background: linear-gradient(90deg, rgba(184, 0, 162, 1) 0%, rgba(135, 245, 243, 1) 35%, rgba(212, 13, 208, 1) 100%);
+            animation: borderMove 3s linear infinite;
+            background-size: 300%;
+        }
+        @keyframes borderMove {
+            0%{
+                background-position: 0 50% ;
+            }
+            50%{
+                background-position: 100% 50% ;
+            }
+            100%{
+                background-position: 0 50% ;
+            }
+        }
+
+        .logo span{
+            font-size: 1.4rem;
+            font-family: "Atomic Age", system-ui;
+            font-weight: 400;
+            font-style: normal;
+            background: linear-gradient(90deg, #ff8cfd, #8cfff2, #ff8cf0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 1px;
+
+
+        }
+        nav ul{
+            display: flex;
+            list-style: none;
+            gap: 25px;
+            margin: 0;
+            padding: 0;
+        }
+        nav ul li a{
+            text-decoration: none;
+            color: white;
+            font-family: "Roboto Mono", monospace;
+            font-optical-sizing: auto;
+            font-weight:400;
+            font-style: normal;
+            font-size: 16px;
+            padding: 8px 18px;
+            border-radius: 25px;
+            transition: all 0.4s ease;
+            position: relative;
+
+        }
+        nav ul li a::before{
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: 25px;
+            background: #14f3ff;
+            background: linear-gradient(90deg, rgba(20, 243, 255, 1) 0%, rgba(245, 39, 193, 1) 35%, rgba(20, 216, 255, 1) 100%);     /*-webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);*/
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        nav ul li a:hover::before{
+            opacity: 1;
+        }
+        nav ul li a:hover{
+            color: #14f3ff;
+        }
+
+        .nav-toggle-label{
+            margin-left: auto;
+            display: none;
+            font-size: 30px;
+            cursor: pointer;
+            color: white;
+        }
+
+        #nav-toggle{
+            display: none;
+        }
+
+        @media (max-width: 900px) {
+            #nav-section{
+                padding: 10px 30px;
+            }
+
+            nav ul{
+                display: none;
+                position: absolute;
+                top:70px;
+                right: 25px;
+                background: rgba(15, 15, 30, 0.97);
+                flex-direction: column;
+                border-radius: 12px;
+                padding: 20px;
+                width: 200px;
+                box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+
+            }
+
+            #nav-toggle:checked + .nav-toggle-label+nav ul{
+                display: flex;
+            }
+            .nav-toggle-label{
+                display: block;
+            }
+
+            nav ul li a{
+                padding: 12px 0;
+                text-align: center;
+            }
+
+        }
+
+        #hero-section-id{
+            display: flex;
+            justify-content: center;
+            align-items: center;
             text-align: center;
+            height: 100%;
+            position: absolute;
+            margin:auto;
+            top:20px;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            flex-direction: column;
+            padding: 0 20px;
         }
-    }
+        #heroh1{
+            font-weight: 700;
+            font-size: 45px;
+            margin: 0;
 
-    /* --- Hero Section --- */
-    #hero {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        height: 100%;
-        position: absolute;
-        margin:auto;
-        top:20px;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        flex-direction: column;
-        padding: 0 20px;
-    }
+        }
 
-    #heroh1 {
-        font-weight: 700;
-        font-size: 45px;
-        background: linear-gradient(132deg, rgba(255,255,255,1) 0%, rgba(136,252,241,1) 50%, rgba(250,155,242,1) 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        margin: 0;
-    }
+        #heroh11{
+            font-weight: 700;
+            font-size: 55px;
+            color: #0FE7FF;
+            margin: 10px 0;
+            font-family: "IBM Plex Mono", monospace;
+            font-style: normal;
+            animation: colorChange 3s infinite alternate ease-in-out;
 
-    #heroh11 {
-        font-weight: 700;
-        font-size: 55px;
-        color: lightseagreen;
-        margin: 10px 0;
-    }
 
-    #heroh2 {
-        font-family: "Exo 2", sans-serif;
-        font-weight: 500;
-        font-size: 22px;
-        background: linear-gradient(90deg, rgba(121,232,223,1) 0%, rgba(255,153,219,1) 50%, rgba(83,232,237,1) 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        max-width: 800px;
-        margin-top: 15px;
-        line-height: 1.5;
-    }
-
-    /* --- Responsive Text --- */
-    @media (max-width: 768px) {
-        #heroh1, #heroh11 { font-size: 40px; }
-        #heroh2 { font-size: 18px; }
-    }
-
-    @media (max-width: 480px) {
-        #heroh1, #heroh11 {
-            font-size: 28px;
+        }
+        @keyframes colorChange {
+            0%   { color:#0FE7FF; }
+            25%  { color: #00ff99; }
+            50%  { color: #FF4AEA; }
+            75%  { color: #F54EDF; }
+            100% { color:#FFB3F5; }
         }
 
         #heroh2 {
-            font-size: 15px;
+            font-family: "Roboto Mono", monospace;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+            background: linear-gradient(90deg, rgba(255, 255, 255, 1) 5%, rgba(0, 255, 229, 1) 66%, rgba(255, 156, 243, 1) 84%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            max-width: 800px;
+            margin-top: 15px;
+            line-height: 1.5;
+            text-align: center;
         }
-    }
+
+        @media (max-width: 768px) {
+            #heroh1,#heroh11{font-size: 40px;
+            }
+
+            #heroh2{
+                font-size: 18px;
+                line-height: 1.4;
+            }
+
+        }
+
+        @media (max-width: 480px) {
+            #heroh1, #heroh11 {
+                font-size: 28px;
+            }
+
+            #heroh2 {
+                font-size: 15px;
+                line-height: 1.3;
+            }
+            #hero-section-id{
+                padding: 0 10px;
+            }
+        }
+
+
+        .social-banner{
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 10px 20px;
+            justify-content: center;
+            border-radius: 50%;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+        #youtube{
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 10px;
+            padding: 3px
+            background: linear-gradient(90deg, rgba(184, 0, 162, 1) 0%, rgba(135, 245, 243, 1) 35%, rgba(212, 13, 208, 1) 100%);
+        }
 
 
 
@@ -265,45 +294,54 @@
 
 </head>
 <body>
+<header id="header">
+    <section id="nav-section">
+        <div class="logo">
+            <img src="assets/images/logo.png" alt="saumya-logo">
+            <span>Saumya</span>
 
-<header id ="header">
-<section id ="navbar">
-<div class="logo">
-    <img src="assets/images/logo.png" alt="logo">
-    <span>Saumya</span>
-</div>
+        </div>
 
-    <input type="checkbox" id="burger">
-    <label for="burger" class="burger-menu"><i class="fa-solid fa-bars" style="color: #00e1ff;"></i></label>
+        <input type="checkbox" id="nav-toggle" name="nav-toggle">
+        <label for="nav-toggle" class="nav-toggle-label"><i class="fa-solid fa-bars" style="color: #00e1ff;"></i></label>
 
-    <nav>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#exercises">Exercises</a></li>
-            <li><a href="#gallery">Gallery</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-</section>
+        <nav class="nav">
+            <ul class="nav-list">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#exercises">Exercises</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </section>
 
 </header>
 
-
-<section id = "hero" class="star-bg">
-    <div id = "hero-text">
+<section id="hero-section-id" class="hero-section-class">
+    <div class="hero-div-class">
         <h1 id="heroh1">I'm</h1>
         <h1 id="heroh11"><strong><em>Saumya Divyanjalee</em></strong> </h1>
-        <h2 id="heroh2">Passionate about turning code into solutions, solving problems with creativity, and constantly exploring new technologies.</h2>
-
+        <h2 id="heroh2">
+            <span class="heroh2line">Passionate about turning code into solutions,</span><br>
+            <span class="heroh2line">solving problems with creativity,</span><br>
+            <span class="heroh2line">and constantly exploring new technologies.</span>
+        </h2>
     </div>
-
-
+    <div class="social-banner">
+        <div id="youtube"><a href="https://youtube.com/@saumizcodex?si=2fgr6xuIaLEtmCGe" class="youtube" title="YouTube"></a><img src="assets/images/youtube.png" alt="YouTube-logo"></div>
+        <div id="github"><a href="https://github.com/Saumya-Divyanjalee" class="github" title="Github"></a><img src="assets/images/github.png" alt="GitHub-logo"></div>
+        <div id="linkedin"><a href="https://www.linkedin.com/in/saumya-divyanjalee-1a2608268?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="linkedin" title="Linkedin"><img src="assets/images/logo.png" alt="Linkedin-logo"></a></div>
+        <div id="tiktok"><a href="https://www.tiktok.com/@saumizcodex?_t=ZS-906LumpEMcr&_r=1" class="tiktok" title="TikTok"></a><img src="assets/images/tik-tok.png" alt="TikTok-logo"></div>
+        <div id="email"><a href="saumyadivyanjalee529@gmail.com" class="email" title="Email"></a><img src="assets/images/gmail.png" alt="Gmail--logo"></div>
+     </div>
 </section>
 
-
+<section id="footer-section">
+    <footer id="footer"></footer>
+</section>
 
 
 </body>
