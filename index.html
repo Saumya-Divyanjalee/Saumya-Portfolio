@@ -280,9 +280,9 @@
             gap: 18px;
             padding: 15px 25px;
             border-radius: 25px;
-            background: rgba(15, 15, 30, 0.8);
+            /*background: rgba(15, 15, 30, 0.8);*/
             backdrop-filter: blur(10px);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+            /*box-shadow: 0 4px 8px rgba(0,0,0,0.4);*/
             margin-top: 30px;
         }
 
@@ -535,6 +535,131 @@
             }
         }
 
+        .about-section{
+            margin-top: 80px;
+            display: flex;
+        }
+        #about-h1{
+            margin-left: 45%;
+            font-family: "IBM Plex Mono", monospace;
+            font-weight: 500;
+            font-style: normal;
+            font-size: 40px;
+            color: #0FE7FF;
+        }
+        #h1-about {
+            color: #00FFEA;
+        }
+
+        #me-h1 {
+            color: #FF5CFF;
+        }
+
+
+        #about-h1 a {
+            text-decoration: none;
+        }
+
+        .about-img {
+            flex: 1;
+            min-width: 300px;
+            max-width: 300px;
+            position: relative;
+            order: 2; /* Move image to the right */
+        }
+
+        .about-img img {
+            margin-left: 100px;
+            width: 100%;
+            height: auto;
+            border-radius: 42%;
+            object-fit: cover;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+            padding: 8px;
+            background: linear-gradient(90deg, rgba(184, 0, 162, 1) 0%, rgba(135, 245, 243, 1) 35%, rgba(212, 13, 208, 1) 100%);
+            animation: borderMove-about 3s linear infinite;
+            background-size: 300%;
+
+
+        }
+        @keyframes borderMove-about {
+            0%{
+                background-position: 0 50% ;
+            }
+            50%{
+                background-position: 100% 50% ;
+            }
+            100%{
+                background-position: 0 50% ;
+            }
+        }
+        .about-img img:hover {
+            transform: scale(1.05);
+        }
+        .social-banner-about {
+            display: flex;
+            align-items: center;
+            justify-content: left;
+            gap: 18px;
+            padding: 15px 25px;
+            border-radius: 25px;
+            margin-left: 100px;
+            backdrop-filter: blur(10px);
+            margin-top: 10px;
+        }
+
+        .social-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: linear-gradient(90deg,rgba(255, 255, 255, 1) 5%, rgba(0, 255, 221, 1) 66%, rgba(212, 120, 255, 1) 84%);
+            background-size: 300%;
+            animation: borderMove 3s linear infinite;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            overflow: hidden;
+        }
+
+        .social-icon img {
+            width: 25px;
+            height: 25px;
+            object-fit: contain;
+            transition: filter 0.3s ease, transform 0.3s ease;
+        }
+
+        .social-icon:hover {
+            transform: scale(1.1);
+            animation-duration: 1s;
+        }
+
+        .social-icon:hover img {
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 480px) {
+            .social-banner-about {
+                gap: 12px;
+                padding: 10px 15px;
+            }
+            .social-icon {
+                width: 38px;
+                height: 38px;
+            }
+            .social-icon img {
+                width: 20px;
+                height: 20px;
+            }
+        }
+
+
+
+
+
+
 
 
     </style>
@@ -600,12 +725,65 @@
 </section>
 </main>
 
-<section id="about-section" class="about-section">
+<section id="about" class="about-section">
     <div class="about-div-class">
-        <h1 id="about-h1"><a href="#about">About <span id="me-h1">Me</span></a></h1>
+        <h1 id="about-h1">
+            <a href="#about">
+                <span id="h1-about">About</span>
+                <span id="me-h1">Me</span>
+            </a>
+        </h1>
          <div class="about-img">
-             <img src="">
+             <img src="assets/images/AboutMe-img.jpg" alt="AboutMe-Saumya">
          </div>
+        <div class="social-banner-about">
+            <a href="https://youtube.com/@saumizcodex?si=2fgr6xuIaLEtmCGe" class="social-icon" title="YouTube">
+                <img src="assets/images/youtube.png" alt="YouTube-logo">
+            </a>
+            <a href="https://github.com/Saumya-Divyanjalee" class="social-icon" title="Github">
+                <img src="assets/images/github.png" alt="GitHub-logo">
+            </a>
+            <a href="https://www.linkedin.com/in/saumya-divyanjalee-1a2608268" class="social-icon" title="LinkedIn">
+                <img src="assets/images/linkedin.png" alt="Linkedin-logo">
+            </a>
+            <a href="https://www.tiktok.com/@saumizcodex?_t=ZS-906LumpEMcr&_r=1" class="social-icon" title="TikTok">
+                <img src="assets/images/tik-tok.png" alt="TikTok-logo">
+            </a>
+            <a href="mailto:saumyadivyanjalee529@gmail.com" class="social-icon" title="Email">
+                <img src="assets/images/gmail.png" alt="Gmail-logo">
+            </a>
+        </div>
+        <div class="about-div-class-details">
+
+            <span id="a-span1" class="about-details-span">I'm Saumya Divyanjalee</span>
+            <p id="about-details-p">A passionate <strong>Information Technology undergraduate</strong> at the
+  <strong>Institute of Java and Software Engineering (IJSE)</strong>, specializing in
+  <strong>web development</strong>, <strong>UI/UX design</strong>, and <strong>Java programming</strong>.
+  I love creating clean, responsive, and user-focused digital experiences.
+</p>
+            <ul class="about-details-ul">
+                <li><strong>Full Name:</strong>Edirisinhage Saumya Divyanjalee Sumanarathna</li>
+                <li><strong>Education:</strong>
+                    Diploma in Software Engineering – <strong>IJSE</strong><br>
+                    G.C.E. A/L-2020(1772241)– <strong>Arts Stream</strong>: Economics (A), Geography (A), Communication & Media Studies (B)<br>
+                    G.C.E. O/L-2017(71128026) – 9 Subjects: 5A’s, 2B’s, 2C’s
+                    <br><em>(Mathematics, Sinhala, Sinhala Literature, History, Buddhism – A; Science, Home Science – B; English, Commerce – C)</em>
+                </li>
+                <li><strong>Skills:</strong><br>
+                    <strong>Frontend / Design:</strong> HTML, CSS, JavaScript, Figma (UI/UX Design), Adobe Photoshop, Adobe Illustrator<br>
+                    <strong>Backend / Programming:</strong> Java, JavaFX, Hibernate<br>
+                    <strong>Tools & Software:</strong> MySQL, LibreOffice Suite, Microsoft Excel, Presentation Tools, SceneBuilder, Docker, Ubuntu<br>
+                    <strong>Architecture:</strong> Layered Architecture
+                </li>
+                <li><strong>Location:</strong> Colombo, Sri Lanka</li>
+                <li><strong>Email:</strong>saumyadivyanjalee529@gmail.com</li>
+            </ul>
+            <div class="about-buttons">
+                <a href="#contact" class="btn">Contact Me</a>
+                <a href="files/Saumya_Divyanjalee_CV.pdf" class="btn" download>Download CV</a>
+            </div>
+
+        </div>
     </div>
 </section>
 
