@@ -35,7 +35,11 @@
             font-family: "IBM Plex Mono", monospace;
             font-weight: 400;
             font-style: normal;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
+
         #nav-section{
             position: fixed;
             top: 0;
@@ -69,7 +73,7 @@
             border-radius: 50%;
             object-fit: cover;
             margin-right: 10px;
-            padding: 3px;
+            padding: 8px;
             background: linear-gradient(90deg, rgba(184, 0, 162, 1) 0%, rgba(135, 245, 243, 1) 35%, rgba(212, 13, 208, 1) 100%);
             animation: borderMove 3s linear infinite;
             background-size: 300%;
@@ -184,21 +188,24 @@
             }
 
         }
+        .main-content {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 80px 20px 20px;
+            box-sizing: border-box;
+        }
 
         #hero-section-id{
             display: flex;
             justify-content: center;
             align-items: center;
             text-align: center;
-            height: 100%;
-            position: absolute;
-            margin:auto;
-            top:20px;
-            left: 0;
-            right: 0;
-            bottom: 0;
             flex-direction: column;
             padding: 0 20px;
+            width: 100%;
+            max-width: 1200px;
         }
         #heroh1{
             font-weight: 700;
@@ -266,24 +273,266 @@
         }
 
 
-        .social-banner{
+        .social-banner {
             display: flex;
             align-items: center;
-            gap: 15px;
-            padding: 10px 20px;
             justify-content: center;
-            border-radius: 50%;
+            gap: 18px;
+            padding: 15px 25px;
+            border-radius: 25px;
+            background: rgba(15, 15, 30, 0.8);
             backdrop-filter: blur(10px);
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+            margin-top: 30px;
         }
-        #youtube{
-            width: 20px;
-            height: 20px;
+
+        .social-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: linear-gradient(90deg,rgba(255, 255, 255, 1) 5%, rgba(0, 255, 221, 1) 66%, rgba(212, 120, 255, 1) 84%);
+            background-size: 300%;
+            animation: borderMove 3s linear infinite;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            overflow: hidden;
+        }
+
+        .social-icon img {
+            width: 25px;
+            height: 25px;
+            object-fit: contain;
+            transition: filter 0.3s ease, transform 0.3s ease;
+        }
+
+        .social-icon:hover {
+            transform: scale(1.1);
+            animation-duration: 1s;
+        }
+
+        .social-icon:hover img {
+             transform: scale(1.05);
+        }
+
+        @media (max-width: 480px) {
+            .social-banner {
+                gap: 12px;
+                padding: 10px 15px;
+            }
+            .social-icon {
+                width: 38px;
+                height: 38px;
+            }
+            .social-icon img {
+                width: 20px;
+                height: 20px;
+            }
+        }
+
+
+        #footer-section{
+            position: relative;
+            left: 0;
+            margin-top: auto;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+            background: rgba(2, 0, 36, 0.9);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 -4px 8px rgba(0,0,0,0.4);
+            z-index: 999;
+            padding: 10px 80px;
+            box-sizing: border-box;
+
+        }
+        .footer-logo{
+            display: grid;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 10px;
+        }
+        .footer-logo img{
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
             object-fit: cover;
             margin-right: 10px;
-            padding: 3px
+            padding: 10px;
             background: linear-gradient(90deg, rgba(184, 0, 162, 1) 0%, rgba(135, 245, 243, 1) 35%, rgba(212, 13, 208, 1) 100%);
+            animation: footer-borderMove 3s linear infinite;
+            background-size: 300%;
+        }
+        @keyframes footer-borderMove {
+            0%{
+                background-position: 0 50% ;
+            }
+            50%{
+                background-position: 100% 50% ;
+            }
+            100%{
+                background-position: 0 50% ;
+            }
+        }
+
+        .footer-logo span{
+            font-size: 1.4rem;
+            font-family: "Atomic Age", system-ui;
+            font-weight: 400;
+            font-style: normal;
+            background: linear-gradient(90deg, #ff8cfd, #8cfff2, #ff8cf0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 1px;
+
+        }
+
+
+        .footer-nav ul{
+            display: grid;
+            list-style: none;
+            gap: 15px;
+            margin: 0;
+            padding: 0;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .footer-nav li a{
+            text-decoration: none;
+            color: white;
+            font-family: "Roboto Mono", monospace;
+            font-optical-sizing: auto;
+            font-weight:400;
+            font-style: normal;
+            font-size: 16px;
+            padding: 8px 18px;
+            border-radius: 25px;
+            transition: all 0.4s ease;
+
+
+        }
+
+        .footer-nav li a:hover{
+            color: #14f3ff;
+
+        }
+        .footer-content{
+            margin-top: 20px;
+            display: grid;
+            align-items: center;
+            gap: 10px;
+            font-family: "Roboto Mono", monospace;
+            font-size: 12px;
+
+        }
+
+        .footer-name{
+            font-family: "Roboto Mono", monospace;
+            color: #14f3ff;
+            font-size: 12px;
+            display: grid;
+            justify-content: center;
+        }
+
+        .footer-handle{
+            font-family: "Roboto Mono", monospace;
+            color: #FF78FF;
+            font-size: 15px;
+            font-weight: bold;
+            display: grid;
+            justify-content: center;
+        }
+
+        .footer-year{
+            font-family: "Roboto Mono", monospace;
+            color: #14f3ff;
+            font-size: 12px;
+            font-weight: bold;
+            display: grid;
+            justify-content: center;
+        }
+
+        /* .footer-toggle-label{*/
+        /*    margin-left: auto;*/
+        /*    display: none;*/
+        /*    font-size: 30px;*/
+        /*    cursor: pointer;*/
+        /*    color: white;*/
+        /*}*/
+
+        /*#footer-toggle{*/
+        /*    display: none;*/
+        /*}*/
+
+        @media (max-width: 900px) {
+            #footer-section {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                padding: 25px 20px;
+            }
+
+            .footer-logo {
+                justify-content: center;
+                margin-bottom: 15px;
+            }
+
+
+            .footer-nav ul {
+                display: none;
+                position: absolute;
+                top: -120px;
+                right: 25px;
+                background: rgba(15, 15, 30, 0.97);
+                flex-direction: column;
+                border-radius: 12px;
+                padding: 20px;
+                width: 200px;
+                box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+            }
+
+            /*#footer-toggle:checked + .footer-toggle-label + .footer-nav ul {*/
+            /*    display: flex;*/
+            /*}*/
+
+            /*.footer-toggle-label {*/
+            /*    display: block;*/
+            /*}*/
+
+            .footer-nav ul li a {
+                padding: 12px 0;
+                text-align: center;
+            }
+
+            .footer-nav ul {
+                gap: 10px;
+                margin-bottom: 15px;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                gap: 4px;
+            }
+
+            @media (max-width: 480px) {
+                #footer-section {
+                    padding: 20px 10px;
+                }
+
+                .footer-logo span {
+                    font-size: 1.2rem;
+                }
+
+                .footer-nav li a {
+                    font-size: 14px;
+                }
+
+                .footer-content {
+                    font-size: 12px;
+                }
+            }
         }
 
 
@@ -319,7 +568,7 @@
     </section>
 
 </header>
-
+<main class="main-content">
 <section id="hero-section-id" class="hero-section-class">
     <div class="hero-div-class">
         <h1 id="heroh1">I'm</h1>
@@ -331,17 +580,63 @@
         </h2>
     </div>
     <div class="social-banner">
-        <div id="youtube"><a href="https://youtube.com/@saumizcodex?si=2fgr6xuIaLEtmCGe" class="youtube" title="YouTube"></a><img src="assets/images/youtube.png" alt="YouTube-logo"></div>
-        <div id="github"><a href="https://github.com/Saumya-Divyanjalee" class="github" title="Github"></a><img src="assets/images/github.png" alt="GitHub-logo"></div>
-        <div id="linkedin"><a href="https://www.linkedin.com/in/saumya-divyanjalee-1a2608268?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="linkedin" title="Linkedin"><img src="assets/images/logo.png" alt="Linkedin-logo"></a></div>
-        <div id="tiktok"><a href="https://www.tiktok.com/@saumizcodex?_t=ZS-906LumpEMcr&_r=1" class="tiktok" title="TikTok"></a><img src="assets/images/tik-tok.png" alt="TikTok-logo"></div>
-        <div id="email"><a href="saumyadivyanjalee529@gmail.com" class="email" title="Email"></a><img src="assets/images/gmail.png" alt="Gmail--logo"></div>
-     </div>
+        <a href="https://youtube.com/@saumizcodex?si=2fgr6xuIaLEtmCGe" class="social-icon" title="YouTube">
+            <img src="assets/images/youtube.png" alt="YouTube-logo">
+        </a>
+        <a href="https://github.com/Saumya-Divyanjalee" class="social-icon" title="Github">
+            <img src="assets/images/github.png" alt="GitHub-logo">
+        </a>
+        <a href="https://www.linkedin.com/in/saumya-divyanjalee-1a2608268" class="social-icon" title="LinkedIn">
+            <img src="assets/images/linkedin.png" alt="Linkedin-logo">
+        </a>
+        <a href="https://www.tiktok.com/@saumizcodex?_t=ZS-906LumpEMcr&_r=1" class="social-icon" title="TikTok">
+            <img src="assets/images/tik-tok.png" alt="TikTok-logo">
+        </a>
+        <a href="mailto:saumyadivyanjalee529@gmail.com" class="social-icon" title="Email">
+            <img src="assets/images/gmail.png" alt="Gmail-logo">
+        </a>
+    </div>
+
+</section>
+</main>
+
+<section id="about-section" class="about-section">
+    <div class="about-div-class">
+        <h1 id="about-h1"><a href="#about">About <span id="me-h1">Me</span></a></h1>
+         <div class="about-img">
+             <img src="">
+         </div>
+    </div>
 </section>
 
 <section id="footer-section">
-    <footer id="footer"></footer>
+    <div class="footer-logo">
+        <img src="assets/images/logo.png" alt="saumya-logo">
+        <span>Saumya</span>
+    </div>
+
+<!--    <input type="checkbox" id="footer-toggle" name="footer-toggle">-->
+<!--    <label for="footer-toggle" class="footer-toggle-label"><i class="fa-solid fa-bars" style="color: #00e1ff;"></i></label>-->
+
+    <nav class="footer-nav">
+        <ul class="footer-list">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#exercises">Exercises</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="footer-content">
+        <span class="footer-name"><em>Saumya</em></span>
+        <span class="footer-handle"><strong><i>@SaumyaDivyanjalee</i></strong></span>
+        <span class="footer-year">2025</span>
+    </div>
 </section>
+
 
 
 </body>
