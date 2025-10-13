@@ -195,6 +195,7 @@
             justify-content: center;
             padding: 80px 20px 20px;
             box-sizing: border-box;
+
         }
 
         #hero-section-id{
@@ -540,7 +541,8 @@
             display: flex;
         }
         #about-h1{
-            margin-left: 45%;
+            justify-content: center;
+            display: flex;
             font-family: "IBM Plex Mono", monospace;
             font-weight: 500;
             font-style: normal;
@@ -561,22 +563,29 @@
         }
 
         .about-img {
-            flex: 1;
+            /*flex: 1;*/
+            margin-top: 3%;
             min-width: 300px;
             max-width: 300px;
             position: relative;
-            order: 2; /* Move image to the right */
+            justify-content: center;
+            display: flex;
+            margin-left: 10%;
+
+
+            /*order: 2; !* Move image to the right *!*/
         }
 
         .about-img img {
-            margin-left: 100px;
+            justify-content: center;
+            display: flex;
             width: 100%;
             height: auto;
-            border-radius: 42%;
+            border-radius: 50%;
             object-fit: cover;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
             transition: transform 0.3s ease;
-            padding: 8px;
+            padding: 10px;
             background: linear-gradient(90deg, rgba(184, 0, 162, 1) 0%, rgba(135, 245, 243, 1) 35%, rgba(212, 13, 208, 1) 100%);
             animation: borderMove-about 3s linear infinite;
             background-size: 300%;
@@ -604,7 +613,7 @@
             gap: 18px;
             padding: 15px 25px;
             border-radius: 25px;
-            margin-left: 100px;
+            margin-left: 10%;
             backdrop-filter: blur(10px);
             margin-top: 10px;
         }
@@ -644,6 +653,7 @@
             .social-banner-about {
                 gap: 12px;
                 padding: 10px 15px;
+
             }
             .social-icon {
                 width: 38px;
@@ -651,9 +661,24 @@
             }
             .social-icon img {
                 width: 20px;
-                height: 20px;
+                height:20px;
+
             }
         }
+
+        .timeline{
+            position: relative;
+            margin:80px auto;
+            padding: 40px 0;
+            width: 80%;
+
+        }
+
+
+
+
+
+
 
 
 
@@ -753,38 +778,69 @@
                 <img src="assets/images/gmail.png" alt="Gmail-logo">
             </a>
         </div>
-        <div class="about-div-class-details">
+        <div class="timeline">
+            <div class="line"></div>
 
-            <span id="a-span1" class="about-details-span">I'm Saumya Divyanjalee</span>
-            <p id="about-details-p">A passionate <strong>Information Technology undergraduate</strong> at the
-  <strong>Institute of Java and Software Engineering (IJSE)</strong>, specializing in
-  <strong>web development</strong>, <strong>UI/UX design</strong>, and <strong>Java programming</strong>.
-  I love creating clean, responsive, and user-focused digital experiences.
-</p>
-            <ul class="about-details-ul">
-                <li><strong>Full Name:</strong>Edirisinhage Saumya Divyanjalee Sumanarathna</li>
-                <li><strong>Education:</strong>
-                    Diploma in Software Engineering – <strong>IJSE</strong><br>
-                    G.C.E. A/L-2020(1772241)– <strong>Arts Stream</strong>: Economics (A), Geography (A), Communication & Media Studies (B)<br>
-                    G.C.E. O/L-2017(71128026) – 9 Subjects: 5A’s, 2B’s, 2C’s
-                    <br><em>(Mathematics, Sinhala, Sinhala Literature, History, Buddhism – A; Science, Home Science – B; English, Commerce – C)</em>
-                </li>
-                <li><strong>Skills:</strong><br>
-                    <strong>Frontend / Design:</strong> HTML, CSS, JavaScript, Figma (UI/UX Design), Adobe Photoshop, Adobe Illustrator<br>
-                    <strong>Backend / Programming:</strong> Java, JavaFX, Hibernate<br>
-                    <strong>Tools & Software:</strong> MySQL, LibreOffice Suite, Microsoft Excel, Presentation Tools, SceneBuilder, Docker, Ubuntu<br>
-                    <strong>Architecture:</strong> Layered Architecture
-                </li>
-                <li><strong>Location:</strong> Colombo, Sri Lanka</li>
-                <li><strong>Email:</strong>saumyadivyanjalee529@gmail.com</li>
-            </ul>
-            <div class="about-buttons">
-                <a href="#contact" class="btn">Contact Me</a>
-                <a href="files/Saumya_Divyanjalee_CV.pdf" class="btn" download>Download CV</a>
+            <div class="timeline-item left">
+                <div class="content">
+
+                    <span class="highlight">I'm Saumya Divyanjalee</span>
+                    <p>
+                        A passionate <strong>Information Technology undergraduate</strong> at the
+                        <strong>Institute of Java and Software Engineering (IJSE)</strong>, specializing in
+                        <strong>web development</strong>, <strong>UI/UX design</strong>, and <strong>Java programming</strong>.
+                        I love creating clean, responsive, and user-focused digital experiences.
+                    </p>
+                </div>
             </div>
 
+            <div class="timeline-item right">
+                <div class="content">
+                    <h3>Education</h3>
+                    <p>
+                        <strong>Diploma in Software Engineering – IJSE</strong><br>
+                        G.C.E. A/L-2020(1772241) : Economics (A), Geography (A), Communication & Media Studies (B)<br>
+                        G.C.E. O/L-2017(71128026): 9 Subjects (5A’s, 2B’s, 2C’s)
+                    </p>
+                </div>
+            </div>
+
+            <div class="timeline-item left">
+                <div class="content">
+                    <h3>Skills</h3>
+                    <p>
+                        <strong>Frontend / Design:</strong> HTML, CSS, JavaScript, Figma, Photoshop, Illustrator<br>
+                        <strong>Backend / Programming:</strong> Java, JavaFX, Hibernate<br>
+                        <strong>Tools:</strong> MySQL, Docker, Ubuntu, SceneBuilder
+                    </p>
+                </div>
+            </div>
+
+            <div class="timeline-item right">
+                <div class="content">
+                    <h3>Architecture</h3>
+                    <p><strong>Layered Architecture</strong> – Clean, structured design for scalable applications.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item left">
+                <div class="content">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li><strong>Location:</strong> Colombo, Sri Lanka</li>
+                        <li><strong>Email:</strong> saumyadivyanjalee529@gmail.com</li>
+                    </ul>
+                    <div class="about-buttons">
+                        <a href="#contact" class="btn">Contact Me</a>
+                        <a href="files/Saumya_Divyanjalee_CV.pdf" class="btn" download>Download CV</a>
+                    </div>
+                </div>
+            </div>
         </div>
+
+
     </div>
+
 </section>
 
 <section id="footer-section">
