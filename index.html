@@ -40,6 +40,26 @@
             min-height: 100vh;
         }
 
+        #home a{
+            text-decoration: none;
+        }
+        #education a{
+            text-decoration: none;
+        }
+        #projects a{
+            text-decoration: none;
+        }
+        #exercises a{
+            text-decoration: none;
+        }
+        #gallery a{
+            text-decoration: none;
+        }
+        #contacts a{
+            text-decoration: none;
+        }
+
+
         #nav-section{
             position: fixed;
             top: 0;
@@ -57,7 +77,7 @@
             transition: all 0.3s ease;
             box-sizing: border-box;
         }
-        header{
+        .header{
             padding-top: 100px;
         }
 
@@ -315,7 +335,7 @@
         }
 
         .social-icon:hover img {
-             transform: scale(1.05);
+            transform: scale(1.05);
         }
 
         @media (max-width: 480px) {
@@ -565,12 +585,13 @@
         .about-img {
             /*flex: 1;*/
             margin-top: 3%;
-            min-width: 300px;
-            max-width: 300px;
+            min-width: 200px;
+            max-width: 280px;
             position: relative;
             justify-content: center;
             display: flex;
             margin-left: 10%;
+            background-size: cover;
 
 
             /*order: 2; !* Move image to the right *!*/
@@ -693,7 +714,9 @@
 
 </head>
 <body>
-<header id="header">
+<header id="home" class="header">
+    <a href="#home"></a>
+
     <section id="nav-section">
         <div class="logo">
             <img src="assets/images/logo.png" alt="saumya-logo">
@@ -719,35 +742,35 @@
 
 </header>
 <main class="main-content">
-<section id="hero-section-id" class="hero-section-class">
-    <div class="hero-div-class">
-        <h1 id="heroh1">I'm</h1>
-        <h1 id="heroh11"><strong><em>Saumya Divyanjalee</em></strong> </h1>
-        <h2 id="heroh2">
-            <span class="heroh2line">Passionate about turning code into solutions,</span><br>
-            <span class="heroh2line">solving problems with creativity,</span><br>
-            <span class="heroh2line">and constantly exploring new technologies.</span>
-        </h2>
-    </div>
-    <div class="social-banner">
-        <a href="https://youtube.com/@saumizcodex?si=2fgr6xuIaLEtmCGe" class="social-icon" title="YouTube">
-            <img src="assets/images/youtube.png" alt="YouTube-logo">
-        </a>
-        <a href="https://github.com/Saumya-Divyanjalee" class="social-icon" title="Github">
-            <img src="assets/images/github.png" alt="GitHub-logo">
-        </a>
-        <a href="https://www.linkedin.com/in/saumya-divyanjalee-1a2608268" class="social-icon" title="LinkedIn">
-            <img src="assets/images/linkedin.png" alt="Linkedin-logo">
-        </a>
-        <a href="https://www.tiktok.com/@saumizcodex?_t=ZS-906LumpEMcr&_r=1" class="social-icon" title="TikTok">
-            <img src="assets/images/tik-tok.png" alt="TikTok-logo">
-        </a>
-        <a href="mailto:saumyadivyanjalee529@gmail.com" class="social-icon" title="Email">
-            <img src="assets/images/gmail.png" alt="Gmail-logo">
-        </a>
-    </div>
+    <section id="hero-section-id" class="hero-section-class">
+        <div class="hero-div-class">
+            <h1 id="heroh1">I'm</h1>
+            <h1 id="heroh11"><strong><em>Saumya Divyanjalee</em></strong> </h1>
+            <h2 id="heroh2">
+                <span class="heroh2line">Passionate about turning code into solutions,</span><br>
+                <span class="heroh2line">solving problems with creativity,</span><br>
+                <span class="heroh2line">and constantly exploring new technologies.</span>
+            </h2>
+        </div>
+        <div class="social-banner">
+            <a href="https://youtube.com/@saumizcodex?si=2fgr6xuIaLEtmCGe" class="social-icon" title="YouTube">
+                <img src="assets/images/youtube.png" alt="YouTube-logo">
+            </a>
+            <a href="https://github.com/Saumya-Divyanjalee" class="social-icon" title="Github">
+                <img src="assets/images/github.png" alt="GitHub-logo">
+            </a>
+            <a href="https://www.linkedin.com/in/saumya-divyanjalee-1a2608268" class="social-icon" title="LinkedIn">
+                <img src="assets/images/linkedin.png" alt="Linkedin-logo">
+            </a>
+            <a href="https://www.tiktok.com/@saumizcodex?_t=ZS-906LumpEMcr&_r=1" class="social-icon" title="TikTok">
+                <img src="assets/images/tik-tok.png" alt="TikTok-logo">
+            </a>
+            <a href="mailto:saumyadivyanjalee529@gmail.com" class="social-icon" title="Email">
+                <img src="assets/images/gmail.png" alt="Gmail-logo">
+            </a>
+        </div>
 
-</section>
+    </section>
 </main>
 
 <section id="about" class="about-section">
@@ -758,9 +781,9 @@
                 <span id="me-h1">Me</span>
             </a>
         </h1>
-         <div class="about-img">
-             <img src="assets/images/AboutMe-img.jpg" alt="AboutMe-Saumya">
-         </div>
+        <div class="about-img">
+            <img src="assets/images/AboutMe-img.jpg" alt="AboutMe-Saumya">
+        </div>
         <div class="social-banner-about">
             <a href="https://youtube.com/@saumizcodex?si=2fgr6xuIaLEtmCGe" class="social-icon" title="YouTube">
                 <img src="assets/images/youtube.png" alt="YouTube-logo">
@@ -798,31 +821,10 @@
                 <div class="content">
                     <h3>Education</h3>
                     <p>
-                        <strong>Diploma in Software Engineering – IJSE</strong><br>
-                        G.C.E. A/L-2020(1772241) : Economics (A), Geography (A), Communication & Media Studies (B)<br>
-                        G.C.E. O/L-2017(71128026): 9 Subjects (5A’s, 2B’s, 2C’s)
+                        <strong>Diploma in Software Engineering – IJSE</strong>
                     </p>
                 </div>
             </div>
-
-            <div class="timeline-item left">
-                <div class="content">
-                    <h3>Skills</h3>
-                    <p>
-                        <strong>Frontend / Design:</strong> HTML, CSS, JavaScript, Figma, Photoshop, Illustrator<br>
-                        <strong>Backend / Programming:</strong> Java, JavaFX, Hibernate<br>
-                        <strong>Tools:</strong> MySQL, Docker, Ubuntu, SceneBuilder
-                    </p>
-                </div>
-            </div>
-
-            <div class="timeline-item right">
-                <div class="content">
-                    <h3>Architecture</h3>
-                    <p><strong>Layered Architecture</strong> – Clean, structured design for scalable applications.</p>
-                </div>
-            </div>
-
             <div class="timeline-item left">
                 <div class="content">
                     <h3>Contact</h3>
@@ -843,14 +845,32 @@
 
 </section>
 
+<section id="education" class="education-section">
+    <a href="#education"></a>
+</section>
+<section id="projects" class="projects-section">
+    <a href="#projects"></a>
+</section>
+
+<section id="exercises" class="exercises-section">
+    <a href="#exercises"></a>
+</section>
+<section id="gallery" class="gallery-section">
+    <a href="#gallery"></a>
+</section>
+<section id="contact" class="contact-section">
+    <a href="#contact"></a>
+</section>
+
+
 <section id="footer-section">
     <div class="footer-logo">
         <img src="assets/images/logo.png" alt="saumya-logo">
         <span>Saumya</span>
     </div>
 
-<!--    <input type="checkbox" id="footer-toggle" name="footer-toggle">-->
-<!--    <label for="footer-toggle" class="footer-toggle-label"><i class="fa-solid fa-bars" style="color: #00e1ff;"></i></label>-->
+    <!--    <input type="checkbox" id="footer-toggle" name="footer-toggle">-->
+    <!--    <label for="footer-toggle" class="footer-toggle-label"><i class="fa-solid fa-bars" style="color: #00e1ff;"></i></label>-->
 
     <nav class="footer-nav">
         <ul class="footer-list">
