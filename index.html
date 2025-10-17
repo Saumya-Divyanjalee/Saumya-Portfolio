@@ -577,6 +577,15 @@
             font-family: "IBM Plex Mono", monospace;
             font-weight: 500;
             font-style: normal;
+            animation: titleFloat 4s ease-in-out infinite;
+        }
+        @keyframes titleFloat {
+            0%, 100% {
+                transform: translateY(0) scale(1);
+            }
+            50% {
+                transform: translateY(-5px) scale(1.02);
+            }
         }
 
 
@@ -725,10 +734,12 @@
             border: 1px solid rgba(0, 255, 234, 0.2);
             backdrop-filter: blur(10px);
             transition: all 0.3s ease;
-            animation: fadeInUp 1s ease;
+            animation: fadeInUp 5s ease;
             animation-fill-mode: both;
 
+
         }
+
 
         .info-card:nth-child(1) { animation-delay: 0.2s; }
         .info-card:nth-child(2) { animation-delay: 0.4s; }
@@ -1205,7 +1216,9 @@
                 font-size: 1rem;
             }
         }
-
+        .skills-container{
+            margin-top: 30px;
+        }
 
 
 
@@ -1251,7 +1264,7 @@
     <section id="hero-section-id" class="hero-section-class">
         <div class="hero-div-class">
             <h1 id="heroh1">I'm</h1>
-            <h1 id="heroh11"><strong><em>Saumya Divyanjalee</em></strong> </h1>
+            <h1 id="heroh11"><strong><em></em></strong> </h1>
             <h2 id="heroh2">
                 <span class="heroh2line">Passionate about turning code into solutions,</span><br>
                 <span class="heroh2line">solving problems with creativity,</span><br>
@@ -1281,7 +1294,7 @@
 
 <!--About-section-->
 <section id="about"  class="about-section">
-<!--    connect nav bar-->
+    <!--    connect nav bar-->
     <a href="#about"></a>
     <!-- Title -->
     <h1 id="about-h1">
@@ -1364,6 +1377,11 @@
 
 <section id="education" class="education-section">
     <a href="#education"></a>
+
+    <h1 id="education-h1">
+        <span id="h1-education1">Educ</span>
+        <span id="h1-education2">ation</span>
+    </h1>
 
     <!-- Skills Card -->
     <div class="info-card">
@@ -1453,6 +1471,22 @@
 </section>
 
 
+<script src ="assets/lib/jquery-3.7.1.min.js"></script>
+<script>
+    var name_arr = "Saumya Divyanjalee".split("");
+    var idx = 0;
+    var name = "";
+
+    var interval1 = setInterval(() => {
+        if(idx !== name_arr.length) {
+            name += name_arr[idx];
+            document.querySelector('#heroh11 em').innerText = name;
+            idx++;
+        } else {
+            clearInterval(interval1);
+        }
+    }, 200);
+</script>
 
 </body>
 </html>
