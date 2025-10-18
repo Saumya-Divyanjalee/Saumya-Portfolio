@@ -126,6 +126,9 @@
 
 
         }
+
+        /*Navigation*/
+
         nav ul{
             display: flex;
             list-style: none;
@@ -167,6 +170,8 @@
         nav ul li a:hover{
             color: #14f3ff;
         }
+
+        /*Humburger*/
 
         .nav-toggle-label{
             margin-left: auto;
@@ -221,6 +226,8 @@
             box-sizing: border-box;
 
         }
+
+        /*Hero-Section*/
 
         #hero-section-id{
             display: flex;
@@ -299,7 +306,7 @@
             }
         }
 
-
+/*Social-icon-banner*/
         .social-banner {
             display: flex;
             align-items: center;
@@ -359,7 +366,7 @@
             }
         }
 
-
+/*Footer-section*/
         #footer-section{
             position: relative;
             left: 0;
@@ -481,18 +488,6 @@
             justify-content: center;
         }
 
-        /* .footer-toggle-label{*/
-        /*    margin-left: auto;*/
-        /*    display: none;*/
-        /*    font-size: 30px;*/
-        /*    cursor: pointer;*/
-        /*    color: white;*/
-        /*}*/
-
-        /*#footer-toggle{*/
-        /*    display: none;*/
-        /*}*/
-
         @media (max-width: 900px) {
             #footer-section {
                 flex-direction: column;
@@ -520,13 +515,7 @@
                 box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
             }
 
-            /*#footer-toggle:checked + .footer-toggle-label + .footer-nav ul {*/
-            /*    display: flex;*/
-            /*}*/
 
-            /*.footer-toggle-label {*/
-            /*    display: block;*/
-            /*}*/
 
             .footer-nav ul li a {
                 padding: 12px 0;
@@ -1222,8 +1211,7 @@
 
 
 
-
-
+/*Background*/
 
         #stars {
             width: 1px;
@@ -1285,6 +1273,30 @@
                 transform: translateY(-2000px);
             }
         }
+/*Education*/
+
+        #education-h1,#exercises-h1,#projects-h1,#gallery-h1,#contact-h1{
+            font-size: 48px;
+            font-weight: bold;
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            background-color: #0a022b;
+            letter-spacing: 0;
+
+        }
+        #h1-education1,#h1-education2,#h1-exercises1,#h1-exercises2,#h1-projects1,#h1-projects2,#h1-gallery1,#h1-gallery2,#h1-contact1,#h1-contact2{
+            display: inline-block;
+            margin: 0;
+            padding: 0;
+        }
+
+        #h1-education1,#h1-exercises1,#h1-projects1,#h1-gallery1,#h1-contact1{
+            color:#00FFF7;
+        }
+        #h1-education2,#h1-exercises2,#h1-projects2,#h1-gallery2,#h1-contact2{
+            color:#FF5CFF;
+        }
+
 
 
     </style>
@@ -1323,6 +1335,7 @@
     </section>
 
 </header>
+
 <main class="main-content">
     <section id="hero-section-id" class="hero-section-class">
         <div class="hero-div-class">
@@ -1395,7 +1408,7 @@
         <div class="about-text-container">
             <!-- Introduction Card -->
             <div class="info-card">
-                <h3>Who I Am</h3>
+                <h3 id="h3-about"></h3>
                 <p>
                     Hi! I'm <span class="highlight"><em><span id="about-myName">Saumya Divyanjalee</span></em></span>, a passionate
                     <strong>Information Technology undergraduate</strong> at the
@@ -1441,9 +1454,7 @@
 <section id="education" class="education-section">
     <a href="#education"></a>
 
-    <h1 id="education-h1">
-        <span id="h1-education1">Educ</span>
-        <span id="h1-education2">ation</span>
+    <h1 id="education-h1"><span id="h1-education1">Educ</span><span id="h1-education2">ation</span>
     </h1>
 
     <!-- Skills Card -->
@@ -1490,18 +1501,28 @@
     </div>
 
 </section>
+
 <section id="projects" class="projects-section">
     <a href="#projects"></a>
+    <h1 id="projects-h1"><span id="h1-projects1">Pro</span><span id="h1-projects2">jects</span>
+    </h1>
 </section>
 
 <section id="exercises" class="exercises-section">
     <a href="#exercises"></a>
+    <h1 id="exercises-h1"><span id="h1-exercises1">Exer</span><span id="h1-exercises2">cises</span>
+    </h1>
 </section>
+
 <section id="gallery" class="gallery-section">
     <a href="#gallery"></a>
+    <h1 id="gallery-h1"><span id="h1-gallery1">Gall</span><span id="h1-gallery2">ery</span>
+    </h1>
 </section>
 <section id="contact" class="contact-section">
     <a href="#contact"></a>
+    <h1 id="contact-h1"><span id="h1-contact1">Con</span><span id="h1-contact2">tact</span>
+    </h1>
 </section>
 
 
@@ -1549,7 +1570,23 @@
             clearInterval(interval1);
         }
     }, 200);
+
+    var name_arr1 = "Who I Am... ".split("");
+    var idx1 = 0;
+    var name1 = "";
+
+    var interval2 = setInterval(() => {
+        if (idx1 !== name_arr1.length) {
+            name1 += name_arr1[idx1];
+            document.querySelector('#h3-about').innerText = name1;
+            idx1++;
+        } else {
+            clearInterval(interval2);
+        }
+    }, 500);
+
 </script>
+
 
 </body>
 </html>
