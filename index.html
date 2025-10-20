@@ -2580,6 +2580,363 @@
         }
 
 
+
+        /* Gallery Section */
+        .gallery-section {
+            min-height: 100vh;
+            padding: 80px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gallery-section::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: backgroundMove 20s linear infinite;
+            z-index: 0;
+        }
+
+        @keyframes backgroundMove {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50px, 50px); }
+        }
+
+
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-100px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(100px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Gallery Container */
+        .gallery-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .gallery-cards {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            perspective: 1000px;
+        }
+
+        .gallery-cards li {
+            animation: fadeInUp 0.8s ease-out backwards;
+            animation-delay: calc(var(--index, 0) * 0.15s);
+        }
+
+        .gallery-cards li:nth-child(1) { --index: 1; }
+        .gallery-cards li:nth-child(2) { --index: 2; }
+        .gallery-cards li:nth-child(3) { --index: 3; }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(60px) rotateX(-15deg);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) rotateX(0);
+            }
+        }
+
+        /* Image Styling */
+        .me-img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+            position: relative;
+            filter: grayscale(0.3) brightness(0.9);
+
+            /* Corner Mask Effect */
+            --_g: 10%/45% 45% no-repeat conic-gradient(#000 0 0);
+            mask:
+                    left   var(--_i, 0%) top    var(--_g),
+                    bottom var(--_i, 0%) left   var(--_g),
+                    top    var(--_i, 0%) right  var(--_g),
+                    right  var(--_i, 0%) bottom var(--_g);
+        }
+
+        .me-img::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.4), rgba(118, 75, 162, 0.4));
+            border-radius: 20px;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            z-index: 1;
+        }
+
+        .me-img:hover {
+            --_i: 10%;
+            filter: grayscale(0) brightness(1.1);
+            transform: translateY(-15px) scale(1.03);
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4),
+            0 0 0 8px rgba(255, 255, 255, 0.1);
+        }
+
+        .me-img:hover::before {
+            opacity: 0.2;
+        }
+        /*
+           MOBILE MEDIUM - 375px
+          */
+        @media (min-width: 375px) {
+            .gallery-section {
+                padding: 50px 20px;
+            }
+
+            .gallery-section::before {
+                background-size: 35px 35px;
+            }
+
+            .gallery-cards {
+                gap: 30px;
+            }
+
+            .me-img {
+                height: 300px;
+                border-radius: 18px;
+            }
+
+            .me-img::before {
+                border-radius: 18px;
+            }
+        }
+
+        /*
+           MOBILE LARGE - 425px
+          */
+        @media (min-width: 425px) {
+            .gallery-section {
+                padding: 60px 25px;
+            }
+
+            .gallery-section::before {
+                background-size: 40px 40px;
+            }
+
+            .gallery-cards {
+                gap: 35px;
+            }
+
+            .me-img {
+                height: 320px;
+            }
+        }
+
+        /*
+           TABLET - 768px
+          */
+        @media (min-width: 768px) {
+            .gallery-section {
+                padding: 70px 40px;
+            }
+
+            .gallery-section::before {
+                background-size: 45px 45px;
+            }
+
+            .gallery-container {
+                max-width: 720px;
+            }
+
+            .gallery-cards {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 35px;
+            }
+
+            .me-img {
+                height: 350px;
+                border-radius: 20px;
+                box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+            }
+
+            .me-img::before {
+                border-radius: 20px;
+            }
+
+            .me-img:hover {
+                transform: translateY(-12px) scale(1.03);
+                box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4),
+                0 0 0 6px rgba(255, 255, 255, 0.1);
+            }
+        }
+
+        /*
+           LAPTOP - 1024px
+         */
+        @media (min-width: 1024px) {
+            .gallery-section {
+                padding: 80px 50px;
+            }
+
+            .gallery-section::before {
+                background-size: 50px 50px;
+            }
+
+            .gallery-container {
+                max-width: 960px;
+            }
+
+            .gallery-cards {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 40px;
+            }
+
+            .me-img {
+                height: 380px;
+            }
+
+            @keyframes fadeInUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(60px) rotateX(-15deg);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0) rotateX(0);
+                }
+            }
+        }
+
+        /*
+           LAPTOP LARGE - 1440px
+          */
+        @media (min-width: 1440px) {
+            .gallery-section {
+                padding: 80px 60px;
+            }
+
+            .gallery-container {
+                max-width: 1400px;
+            }
+
+            .gallery-cards {
+                gap: 50px;
+            }
+
+            .me-img {
+                height: 400px;
+                box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            }
+
+            .me-img:hover {
+                transform: translateY(-15px) scale(1.03);
+                box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4),
+                0 0 0 8px rgba(255, 255, 255, 0.1);
+            }
+        }
+
+        /*
+           EXTRA LARGE - 1920px+
+         */
+        @media (min-width: 1920px) {
+            .gallery-container {
+                max-width: 1600px;
+            }
+
+            .gallery-cards {
+                gap: 60px;
+            }
+
+            .me-img {
+                height: 450px;
+            }
+        }
+
+        /*
+           TOUCH DEVICES OPTIMIZATION
+      */
+        @media (hover: none) and (pointer: coarse) {
+            .me-img:hover {
+                transform: none;
+                filter: grayscale(0.3) brightness(0.9);
+            }
+
+            .me-img:active {
+                --_i: 10%;
+                filter: grayscale(0) brightness(1.1);
+                transform: scale(0.98);
+            }
+        }
+
+        /*
+           LANDSCAPE ORIENTATION FIX
+          */
+        @media (max-width: 768px) and (orientation: landscape) {
+            .gallery-section {
+                padding: 40px 20px;
+            }
+
+            .me-img {
+                height: 250px;
+            }
+
+            .gallery-cards {
+                gap: 20px;
+            }
+        }
+
+        /*
+           PRINT STYLES
+          */
+        @media print {
+            .gallery-section::before {
+                display: none;
+            }
+
+            .gallery-cards {
+                display: block;
+            }
+
+            .gallery-cards li {
+                page-break-inside: avoid;
+                margin-bottom: 20px;
+            }
+
+            .me-img {
+                box-shadow: none;
+            }
+        }
+
+
     </style>
 
 
@@ -2789,13 +3146,13 @@
             <div class="alevel-result">
                 <img src="assets/images/pb.jpeg" alt="PBMV-logo">
                 <span>2020 - Advanced Level Result</span>
-                <button onclick="window.open('assets/pdf/AL_Certificate.pdf', '_blank')">View Result</button>
+                <button onclick="window.open('assets/images/al-ss.png', '_blank')">View Result</button>
             </div>
 
             <div class="olevel-result">
                 <img src="assets/images/ABMV.jpg" alt="ABMV-logo">
                 <span>2017 - Ordinary Level Result</span>
-                <button onclick="window.open('assets/pdf/OL_Certificate.pdf', '_blank')">View Result</button>
+                <button onclick="window.open('assets/images/ol-ss.png', '_blank')">View Result</button>
             </div>
         </div>
 
@@ -2854,15 +3211,24 @@
 
 <section id="gallery" class="gallery-section">
     <a href="#gallery"></a>
-    <h1 id="gallery-h1"><span id="h1-gallery1">Gall</span><span id="h1-gallery2">ery</span>
-    </h1>
+    <h1 id="gallery-h1"><span id="h1-gallery1">Gall</span><span id="h1-gallery2">ery</span></h1>
+    <div class="gallery-container">
+        <ul class="gallery-cards">
+            <li><img src="assets/images/myphoto1.jpg" class="me-img"></li>
+            <li><img src="assets/images/myphoto2.jpg" class="me-img"></li>
+            <li><img src="assets/images/myphoto3.jpg" class="me-img"></li>
+        </ul>
+    </div>
 
 
 </section>
+
 <section id="contact" class="contact-section">
     <a href="#contact"></a>
-    <h1 id="contact-h1"><span id="h1-contact1">Con</span><span id="h1-contact2">tact</span>
-    </h1>
+    <h1 id="contact-h1"><span id="h1-contact1">Con</span><span id="h1-contact2">tact</span></h1>
+
+
+
 </section>
 
 
