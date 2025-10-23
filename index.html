@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/html">
+<html lang="en">
 <head>
 
     <title>Saumya-Portfolio</title>
@@ -61,7 +61,7 @@
             }
         }
 
-        #stars2 {
+         body #stars2 {
             width: 2px;
             height: 2px;
             background: transparent;
@@ -78,7 +78,7 @@
             }
         }
 
-        #stars3 {
+        body #stars3 {
             width: 3px;
             height: 3px;
             background: transparent;
@@ -103,6 +103,70 @@
             to {
                 transform: translateY(-2000px);
             }
+        }
+
+        #stars, #stars2, #stars3 {
+            position: fixed;
+            top: 0;
+            left: 0;
+            background: transparent;
+            z-index: 0;
+        }
+
+        #stars {
+            width: 1px;
+            height: 1px;
+            box-shadow: 1487px 822px #FFF, 702px 619px #FFF, 579px 76px #FFF, 881px 14px #FFF, 1903px 741px #FFF, 1401px 1791px #FFF, 1316px 857px #FFF, 1628px 1376px #FFF, 1641px 781px #FFF, 1421px 25px #FFF, 525px 254px #FFF, 683px 1197px #FFF, 1636px 1573px #FFF, 1855px 1220px #FFF, 108px 1424px #FFF, 906px 1967px #FFF, 205px 1681px #FFF, 1930px 731px #FFF, 1957px 104px #FFF, 1558px 24px #FFF, 211px 468px #FFF, 2px 1001px #FFF, 664px 1095px #FFF, 1023px 1573px #FFF, 272px 122px #FFF, 659px 1641px #FFF, 1518px 1633px #FFF, 1736px 1016px #FFF, 1085px 1911px #FFF, 737px 1784px #FFF, 564px 968px #FFF, 150px 1277px #FFF, 1848px 505px #FFF, 1067px 1414px #FFF, 1619px 1498px #FFF, 266px 757px #FFF, 450px 1052px #FFF, 604px 1178px #FFF, 1069px 1215px #FFF, 1045px 1816px #FFF, 1682px 1111px #FFF, 578px 1875px #FFF, 1197px 20px #FFF, 736px 1923px #FFF, 1698px 592px #FFF, 491px 1835px #FFF, 106px 1113px #FFF, 1944px 1749px #FFF, 677px 525px #FFF, 798px 1663px #FFF, 463px 19px #FFF, 1982px 1091px #FFF, 736px 1597px #FFF, 244px 1625px #FFF, 1699px 1257px #FFF, 624px 114px #FFF, 1290px 48px #FFF, 1007px 1111px #FFF, 1411px 31px #FFF, 1661px 1065px #FFF, 1583px 1593px #FFF, 1165px 1985px #FFF, 351px 222px #FFF, 158px 709px #FFF, 1304px 194px #FFF, 1192px 1923px #FFF, 358px 1642px #FFF, 889px 1701px #FFF, 424px 1427px #FFF, 1928px 573px #FFF, 1263px 1473px #FFF, 498px 33px #FFF, 1043px 286px #FFF, 843px 1917px #FFF, 909px 813px #FFF, 1033px 291px #FFF, 41px 749px #FFF, 1807px 1719px #FFF, 1984px 284px #FFF, 1983px 1696px #FFF, 1409px 179px #FFF, 1350px 929px #FFF, 332px 1747px #FFF, 212px 1977px #FFF, 1668px 1254px #FFF, 1585px 1736px #FFF, 783px 85px #FFF, 1961px 847px #FFF, 1692px 996px #FFF, 1829px 694px #FFF, 965px 891px #FFF, 1793px 102px #FFF;
+            animation: animStar 50s linear infinite;
+        }
+
+        #stars:after {
+            content: " ";
+            position: absolute;
+            top: 2000px;
+            width: 1px;
+            height: 1px;
+            background: transparent;
+            box-shadow: 1487px 822px #FFF, 702px 619px #FFF, 579px 76px #FFF, 881px 14px #FFF, 1903px 741px #FFF, 1401px 1791px #FFF, 1316px 857px #FFF, 1628px 1376px #FFF, 1641px 781px #FFF, 1421px 25px #FFF, 525px 254px #FFF, 683px 1197px #FFF, 1636px 1573px #FFF, 1855px 1220px #FFF, 108px 1424px #FFF, 906px 1967px #FFF, 205px 1681px #FFF, 1930px 731px #FFF, 1957px 104px #FFF, 1558px 24px #FFF, 211px 468px #FFF, 2px 1001px #FFF, 664px 1095px #FFF, 1023px 1573px #FFF, 272px 122px #FFF, 659px 1641px #FFF, 1518px 1633px #FFF, 1736px 1016px #FFF, 1085px 1911px #FFF, 737px 1784px #FFF, 564px 968px #FFF, 150px 1277px #FFF, 1848px 505px #FFF, 1067px 1414px #FFF, 1619px 1498px #FFF, 266px 757px #FFF, 450px 1052px #FFF, 604px 1178px #FFF, 1069px 1215px #FFF, 1045px 1816px #FFF, 1682px 1111px #FFF, 578px 1875px #FFF, 1197px 20px #FFF, 736px 1923px #FFF, 1698px 592px #FFF, 491px 1835px #FFF, 106px 1113px #FFF, 1944px 1749px #FFF, 677px 525px #FFF, 798px 1663px #FFF, 463px 19px #FFF, 1982px 1091px #FFF, 736px 1597px #FFF, 244px 1625px #FFF, 1699px 1257px #FFF, 624px 114px #FFF, 1290px 48px #FFF, 1007px 1111px #FFF, 1411px 31px #FFF, 1661px 1065px #FFF, 1583px 1593px #FFF, 1165px 1985px #FFF, 351px 222px #FFF, 158px 709px #FFF, 1304px 194px #FFF, 1192px 1923px #FFF, 358px 1642px #FFF, 889px 1701px #FFF, 424px 1427px #FFF, 1928px 573px #FFF, 1263px 1473px #FFF, 498px 33px #FFF, 1043px 286px #FFF, 843px 1917px #FFF, 909px 813px #FFF, 1033px 291px #FFF, 41px 749px #FFF, 1807px 1719px #FFF, 1984px 284px #FFF, 1983px 1696px #FFF, 1409px 179px #FFF, 1350px 929px #FFF, 332px 1747px #FFF, 212px 1977px #FFF, 1668px 1254px #FFF, 1585px 1736px #FFF, 783px 85px #FFF, 1961px 847px #FFF, 1692px 996px #FFF, 1829px 694px #FFF, 965px 891px #FFF, 1793px 102px #FFF;
+        }
+
+        #stars2 {
+            width: 2px;
+            height: 2px;
+            box-shadow: 592px 134px #FFF, 346px 741px #FFF, 1000px 1781px #FFF, 996px 728px #FFF, 1085px 1462px #FFF, 526px 1128px #FFF, 1951px 557px #FFF, 673px 92px #FFF, 415px 776px #FFF, 1570px 643px #FFF, 121px 697px #FFF, 782px 1847px #FFF, 1853px 256px #FFF, 910px 195px #FFF, 362px 1201px #FFF, 52px 1627px #FFF, 387px 899px #FFF, 547px 1995px #FFF, 1298px 440px #FFF, 1474px 1713px #FFF, 1109px 1322px #FFF, 1720px 1237px #FFF, 473px 1196px #FFF, 1682px 580px #FFF, 1476px 655px #FFF, 1254px 731px #FFF, 1069px 1840px #FFF, 291px 1789px #FFF, 825px 1237px #FFF, 1067px 543px #FFF, 962px 990px #FFF, 1606px 1387px #FFF, 884px 1555px #FFF, 1209px 1830px #FFF, 439px 535px #FFF, 360px 1451px #FFF, 1018px 1837px #FFF, 1964px 677px #FFF, 1095px 159px #FFF, 390px 245px #FFF, 1869px 597px #FFF, 1857px 544px #FFF, 745px 1186px #FFF, 336px 1867px #FFF, 250px 1377px #FFF, 1872px 168px #FFF, 878px 1299px #FFF, 1257px 177px #FFF, 984px 303px #FFF, 544px 303px #FFF, 1250px 1052px #FFF, 152px 1322px #FFF;
+            animation: animStar 100s linear infinite;
+        }
+
+        #stars2:after {
+            content: " ";
+            position: absolute;
+            top: 2000px;
+            width: 2px;
+            height: 2px;
+            background: transparent;
+            box-shadow: 592px 134px #FFF, 346px 741px #FFF, 1000px 1781px #FFF, 996px 728px #FFF, 1085px 1462px #FFF, 526px 1128px #FFF, 1951px 557px #FFF, 673px 92px #FFF, 415px 776px #FFF, 1570px 643px #FFF, 121px 697px #FFF, 782px 1847px #FFF, 1853px 256px #FFF, 910px 195px #FFF, 362px 1201px #FFF, 52px 1627px #FFF, 387px 899px #FFF, 547px 1995px #FFF, 1298px 440px #FFF, 1474px 1713px #FFF, 1109px 1322px #FFF, 1720px 1237px #FFF, 473px 1196px #FFF, 1682px 580px #FFF, 1476px 655px #FFF, 1254px 731px #FFF, 1069px 1840px #FFF, 291px 1789px #FFF, 825px 1237px #FFF, 1067px 543px #FFF, 962px 990px #FFF, 1606px 1387px #FFF, 884px 1555px #FFF, 1209px 1830px #FFF, 439px 535px #FFF, 360px 1451px #FFF, 1018px 1837px #FFF, 1964px 677px #FFF, 1095px 159px #FFF, 390px 245px #FFF, 1869px 597px #FFF, 1857px 544px #FFF, 745px 1186px #FFF, 336px 1867px #FFF, 250px 1377px #FFF, 1872px 168px #FFF, 878px 1299px #FFF, 1257px 177px #FFF, 984px 303px #FFF, 544px 303px #FFF, 1250px 1052px #FFF, 152px 1322px #FFF;
+        }
+
+        #stars3 {
+            width: 3px;
+            height: 3px;
+            box-shadow: 222px 946px #FFF, 408px 926px #FFF, 1608px 1741px #FFF, 1977px 1436px #FFF, 713px 1152px #FFF, 139px 39px #FFF, 497px 1590px #FFF, 1808px 1652px #FFF, 598px 667px #FFF, 1962px 75px #FFF, 331px 1245px #FFF, 1600px 1822px #FFF, 1463px 883px #FFF, 299px 335px #FFF, 1229px 909px #FFF, 448px 581px #FFF, 1346px 571px #FFF, 1247px 458px #FFF, 799px 186px #FFF, 643px 404px #FFF, 1330px 790px #FFF, 299px 699px #FFF, 1593px 1891px #FFF, 934px 1230px #FFF, 1162px 1835px #FFF, 903px 1024px #FFF, 596px 900px #FFF, 1223px 1078px #FFF, 682px 1024px #FFF, 151px 373px #FFF, 54px 1586px #FFF, 657px 1902px #FFF;
+            animation: animStar 150s linear infinite;
+        }
+
+        #stars3:after {
+            content: "";
+            position: absolute;
+            top: 2000px;
+            width: 3px;
+            height: 3px;
+            background: transparent;
+            box-shadow: 222px 946px #FFF, 408px 926px #FFF, 1608px 1741px #FFF, 1977px 1436px #FFF, 713px 1152px #FFF, 139px 39px #FFF, 497px 1590px #FFF, 1808px 1652px #FFF, 598px 667px #FFF, 1962px 75px #FFF, 331px 1245px #FFF, 1600px 1822px #FFF, 1463px 883px #FFF, 299px 335px #FFF, 1229px 909px #FFF, 448px 581px #FFF, 1346px 571px #FFF, 1247px 458px #FFF, 799px 186px #FFF, 643px 404px #FFF, 1330px 790px #FFF, 299px 699px #FFF, 1593px 1891px #FFF, 934px 1230px #FFF, 1162px 1835px #FFF, 903px 1024px #FFF, 596px 900px #FFF, 1223px 1078px #FFF, 682px 1024px #FFF, 151px 373px #FFF, 54px 1586px #FFF, 657px 1902px #FFF;
+        }
+
+        @keyframes animStar {
+            from { transform: translateY(0px); }
+            to { transform: translateY(-2000px); }
         }
 
         /*navigation button click go section*/
@@ -175,6 +239,8 @@
             background: linear-gradient(90deg, rgba(184, 0, 162, 1) 0%, rgba(135, 245, 243, 1) 35%, rgba(212, 13, 208, 1) 100%);
             animation: borderMove 3s linear infinite;
             background-size: 300%;
+            filter: saturate(1.15) contrast(1.05) brightness(1.02);
+
         }
         @keyframes borderMove {
             0%{
@@ -888,6 +954,8 @@
             position: relative;
             width: 100%;
             aspect-ratio: 1;
+            filter: saturate(1.15) contrast(1.05) brightness(1.02);
+
         }
 
         .about-img img {
@@ -901,10 +969,12 @@
             background-size: 300%;
             box-shadow: 0 10px 40px rgba(0, 255, 234, 0.3);
             transition: transform 0.3s ease;
+            filter: saturate(1.15) contrast(1.05) brightness(1.02);
         }
 
         .about-img img:hover {
             transform: scale(1.05);
+            filter: saturate(1.15) contrast(1.05) brightness(1.02);
         }
 
         @keyframes borderMove {
@@ -2941,41 +3011,6 @@
          /*Projects Section Styling */
 
 
-        .projects-section {
-            position: relative;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 50px 20px;
-            background: transparent;
-
-        }
-
-        .projects-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: transparent;
-            background-size: 200px 100px;
-            opacity: 0.5;
-        }
-
-
-
-        .projects-section a[href="#projects"] {
-            display: block;
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-        }
 
         .projects-container {
             display: grid;
@@ -2988,7 +3023,7 @@
         }
 
         .project1, .project2, .project3, .project4 {
-            background: rgba(0, 0, 0, 0.7);
+            /*background: rgba(0, 0, 0, 0.7);*/
             border: 2px solid #00ffff;
             border-radius: 20px;
             padding: 20px;
@@ -3000,6 +3035,8 @@
             animation: slideIn 0.8s ease forwards;
             opacity: 0;
             transform: translateY(50px);
+            display: flex;
+            flex-direction: column;
         }
 
         .project1 { animation-delay: 0.1s; }
@@ -3065,14 +3102,51 @@
             font-style: normal;
         }
 
+        .projects-section ol {
+            margin-bottom: 20px;
+        }
+
         .projects-section ol li{
             text-align: left;
             list-style-type: circle;
             color: white;
         }
 
-        .github-btn {
+        /* GitHub Button Styling */
+        .project1 .social-icon,
+        .project2 .social-icon,
+        .project3 .social-icon,
+        .project4 .social-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: auto auto 0;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(90deg,rgba(5, 224, 252, 1) 0%, rgba(245, 124, 247, 1) 35%, rgba(48, 255, 227, 1) 100%);
+            transition: all 0.3s ease;
+        }
 
+        .project1 .social-icon:hover,
+        .project2 .social-icon:hover,
+        .project3 .social-icon:hover,
+        .project4 .social-icon:hover {
+            background:white;
+            transform: scale(1.1);
+        }
+
+        .project1 .social-icon img,
+        .project2 .social-icon img,
+        .project3 .social-icon img,
+        .project4 .social-icon img {
+            width: 30px;
+            height: 30px;
+            margin: 0;
+            filter: brightness(1) contrast(1);
+        }
+
+        .github-btn {
             display: flex;
             padding: 10px 20px;
             background: linear-gradient(45deg, #00ffff, #ff00ff);
@@ -3082,9 +3156,7 @@
             font-weight: bold;
             transition: all 0.3s ease;
             box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
-
         }
-
 
         .github-btn:hover {
             transform: translateY(-2px);
@@ -3092,7 +3164,7 @@
             background: linear-gradient(45deg, #ff00ff, #00ffff);
         }
 
-        /* Bottom accent elements like in the image */
+        /* Bottom accent elements */
         .projects-section::after {
             position: absolute;
             bottom: 20px;
@@ -3107,6 +3179,252 @@
         #github-btn1,#github-btn2,#github-btn3,#github-btn4 {
             margin-bottom: 0;
         }
+
+        /* Exercises Section Styling */
+
+
+
+
+        .exercises-container {
+            max-width: 5000px;
+            width: 1000px;
+
+
+            border-radius: 50px;
+            box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;            padding: 40px 30px;
+
+            z-index: 2;
+
+         }
+
+
+        .exercises-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+
+        }
+
+        .exercises-list li {
+            background:#05E0FC;
+            border-radius: 25px;
+            padding: 15px 20px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: black;
+            text-align: center;
+            position: relative;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 4px 15px rgba(0, 255, 255, 0.3);
+            margin-bottom: 5px;
+            height: 15px;
+        }
+
+        .exercises-list li:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 0, 255, 0.5);
+            background:  linear-gradient(90deg,rgba(253, 120, 255, 1) 0%, rgba(227, 23, 210, 1) 35%, rgba(48, 255, 227, 1) 100%);
+        }
+
+        .exercises-list li a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 35px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            margin-left: 15px;
+        }
+
+        .exercises-list li a:hover {
+            background: rgba(0, 0, 0, 0.5);
+            transform: scale(1.1);
+        }
+
+        .exercises-list li a img {
+            width: 25px;
+            height: 20px;
+            filter: brightness(0) invert(1);
+            margin: 0;
+        }
+
+        /* Animation for list items */
+        .exercises-list li {
+            animation: slideInLeft 0.6s ease forwards;
+            opacity: 0;
+            transform: translateX(-50px);
+        }
+
+        .exercises-list li:nth-child(1) { animation-delay: 0.1s; }
+        .exercises-list li:nth-child(2) { animation-delay: 0.2s; }
+        .exercises-list li:nth-child(3) { animation-delay: 0.3s; }
+        .exercises-list li:nth-child(4) { animation-delay: 0.4s; }
+        .exercises-list li:nth-child(5) { animation-delay: 0.5s; }
+        .exercises-list li:nth-child(6) { animation-delay: 0.6s; }
+        .exercises-list li:nth-child(7) { animation-delay: 0.7s; }
+        .exercises-list li:nth-child(8) { animation-delay: 0.8s; }
+        .exercises-list li:nth-child(9) { animation-delay: 0.9s; }
+        .exercises-list li:nth-child(10) { animation-delay: 1s; }
+        .exercises-list li:nth-child(11) { animation-delay: 1.1s; }
+        .exercises-list li:nth-child(12) { animation-delay: 1.2s; }
+
+        @keyframes slideInLeft {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .exercises-container {
+                padding: 30px 20px;
+            }
+
+            .exercises-list li {
+                font-size: 1rem;
+                padding: 12px 20px;
+            }
+
+            #exercises-h1 {
+                font-size: 2.5rem;
+            }
+        }
+
+        /* Contact Container */
+        .contact-section {
+            display: grid;
+            align-items: flex-start; /* NOT center */
+            justify-content: flex-start; /* NOT center */
+            gap: 30px;
+        }
+
+        /* ===== Contact Form Styles ===== */
+        #contactForm {
+            max-width: 5000px;
+
+
+
+            border-radius: 150px;
+
+            font-family: "Roboto Mono", monospace;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        /* Input & Textarea styling */
+        #contactForm input[type="text"],
+        #contactForm input[type="email"],
+        #contactForm textarea {
+            width: 100%;
+            padding: 12px 15px;
+            margin: 10px 0;
+            border: 5px solid #30FFE3;
+            border-radius: 10px;
+            font-size: 15px;
+
+            transition: 0.3s ease;
+            background: transparent;
+            font-family: "Roboto Mono", monospace;
+            color: white;
+            font-weight: 400;
+            font-style: normal;
+        }
+        #contactForm input:hover,#contactForm textarea:hover{
+            border-color: #ED32CE;
+        }
+
+        /* Focus effect */
+        #contactForm input:focus,
+        #contactForm textarea:focus {
+            border-color: #0078ff;
+            box-shadow: 0 0 8px rgba(0, 120, 255, 0.2);
+            outline: none;
+        }
+
+        /* Buttons */
+        #contactForm input[type="button"] {
+            width: 48%;
+            padding: 12px;
+
+            border-radius: 75px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s ease;
+
+            font-weight: bold;
+        }
+        #contactForm input[type="reset"] {
+            width: 48%;
+            padding: 12px;
+
+            border-radius: 75px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s ease;
+
+            font-weight: bold;
+        }
+
+        /* Submit Button */
+        #submit {
+            background: #f050f2;
+            background: linear-gradient(90deg,rgba(240, 80, 242, 1) 0%, rgba(7, 212, 227, 1) 35%, rgba(75, 216, 235, 1) 100%);
+            color: #00058F;
+            font-weight: bold;
+            border:3px solid  #07D4E3 ;
+        }
+
+        /* Reset Button */
+        #reset {
+            background: transparent;
+            color: white;
+            border:3px solid #4BD8EB;
+        }
+
+        /* Hover Effects */
+        #submit:hover {
+            background: #00006b;
+            background: linear-gradient(90deg,rgba(0, 0, 107, 1) 0%, rgba(0, 12, 102, 1) 35%, rgba(189, 0, 186, 1) 100%);
+            transform: translateY(-2px);
+            color: white;
+            font-weight: bold;
+            border:3px solid #F050F2 ;
+        }
+        #reset:hover {
+
+            transform: translateY(-2px);
+            border:3px solid #F050F2 ;
+        }
+
+        /* Textarea resize off */
+        #contactForm textarea {
+            resize: none;
+            height: 120px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            #contactForm {
+                padding: 20px;
+            }
+
+            #contactForm input[type="button"] {
+                width: 100%;
+                margin-top: 10px;
+            }
+        }
+
+
 
 
 
@@ -3487,7 +3805,7 @@
                 <img src="assets/images/github.png" alt="GitHub-logo">
             </a></li>
 
-            <li>Assignment Case 03
+            <li>Assignment - Case 03
             <a href="https://github.com/Saumya-Divyanjalee/Transition-Animation/blob/master/Case-03.html" class="ex3" title="case03">
                 <img src="assets/images/github.png" alt="GitHub-logo">
             </a></li>
@@ -3562,6 +3880,51 @@
     <h1 id="contact-h1"><span id="h1-contact1">Con</span><span id="h1-contact2">tact</span></h1>
 
 
+    <!-- CONTACT FORM -->
+    <form id="contactForm">
+        <div>
+            <input type="text" id="yourName" name="yourName" placeholder="YOUR NAME" required>
+        </div>
+        <div>
+            <input type="email" id="yourEmail" name="yourEmail" placeholder="YOUR EMAIL" required>
+        </div>
+        <div>
+            <input type="text" id="yourSubject" name="yourSubject" placeholder="YOUR SUBJECT" required>
+        </div>
+        <div>
+            <textarea id="yourMessage" name="yourMessage" placeholder="YOUR MESSAGE" required></textarea>
+        </div>
+        <div>
+            <input type="button" id="submit" value="SUBMIT">
+            <input type="reset" id="reset" value="RESET">
+        </div>
+    </form>
+
+
+    <div class="social-banner">
+        <a href="https://youtube.com/@saumizcodex?si=2fgr6xuIaLEtmCGe" class="social-icon" title="YouTube">
+            <img src="assets/images/youtube.png" alt="YouTube-logo">
+        </a>
+        <a href="https://github.com/Saumya-Divyanjalee" class="social-icon" title="Github">
+            <img src="assets/images/github.png" alt="GitHub-logo">
+        </a>
+        <a href="https://www.linkedin.com/in/saumya-divyanjalee-1a2608268" class="social-icon" title="LinkedIn">
+            <img src="assets/images/linkedin.png" alt="Linkedin-logo">
+        </a>
+        <a href="https://www.tiktok.com/@saumizcodex?_t=ZS-906LumpEMcr&_r=1" class="social-icon" title="TikTok">
+            <img src="assets/images/tik-tok.png" alt="TikTok-logo">
+        </a>
+        <a href="mailto:saumyadivyanjalee529@gmail.com" class="social-icon" title="Email">
+            <img src="assets/images/gmail.png" alt="Gmail-logo">
+        </a>
+        <a href="tel:+94 70 212 7944" class="social-icon" title="SMS">
+        <img src="assets/images/sms.png" alt="SMS-logo">
+        </a>
+
+
+    </div>
+
+
 
 </section>
 
@@ -3587,11 +3950,30 @@
         </ul>
     </nav>
 
+    <div class="social-banner">
+        <a href="https://youtube.com/@saumizcodex?si=2fgr6xuIaLEtmCGe" class="social-icon" title="YouTube">
+            <img src="assets/images/youtube.png" alt="YouTube-logo">
+        </a>
+        <a href="https://github.com/Saumya-Divyanjalee" class="social-icon" title="Github">
+            <img src="assets/images/github.png" alt="GitHub-logo">
+        </a>
+        <a href="https://www.linkedin.com/in/saumya-divyanjalee-1a2608268" class="social-icon" title="LinkedIn">
+            <img src="assets/images/linkedin.png" alt="Linkedin-logo">
+        </a>
+        <a href="https://www.tiktok.com/@saumizcodex?_t=ZS-906LumpEMcr&_r=1" class="social-icon" title="TikTok">
+            <img src="assets/images/tik-tok.png" alt="TikTok-logo">
+        </a>
+        <a href="mailto:saumyadivyanjalee529@gmail.com" class="social-icon" title="Email">
+            <img src="assets/images/gmail.png" alt="Gmail-logo">
+        </a>
+    </div>
+
     <div class="footer-content">
         <span class="footer-name"><em>Saumya</em></span>
         <span class="footer-handle"><strong><i>@SaumyaDivyanjalee</i></strong></span>
         <span class="footer-year">2025</span>
     </div>
+
 </section>
 
 
@@ -3634,7 +4016,37 @@
     }
 
 </script>
-<script></script>
+<!--<script>-->
+<!--    function myFunction() {-->
+<!--        alert("Welocme to my Protfolio");-->
+<!--    }-->
+<!--</script>-->
+<script>
+    // When user clicks SUBMIT
+    document.getElementById("submit").addEventListener("click", function() {
+        const name = document.getElementById("yourName").value;
+        const email = document.getElementById("yourEmail").value;
+        const subject = document.getElementById("yourSubject").value;
+        const message = document.getElementById("yourMessage").value;
+
+        // Replace with your Gmail address 👇
+        const to = "saumyadivyanjalee529@gmail.com";
+
+        // Build mailto link
+        const mailtoLink = `mailto:${to}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(
+            "Name: " + name + "\nEmail: " + email + "\n\nMessage: " + message
+        )}`;
+
+        // Open Gmail (or default mail app)
+        window.location.href = mailtoLink;
+    });
+
+    // When user clicks RESET
+    document.getElementById("reset").addEventListener("click", function() {
+        document.getElementById("contactForm").reset();
+    });
+</script>
+
 
 
 </body>
