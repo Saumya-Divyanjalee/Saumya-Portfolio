@@ -875,7 +875,6 @@ nav ul li a:hover{
     margin-bottom: 60px;
     font-family: "IBM Plex Mono", monospace;
     font-weight: 500;
-    font-style: normal;
     animation: titleFloat 4s ease-in-out infinite;
 }
 
@@ -893,7 +892,6 @@ nav ul li a:hover{
     text-shadow: 0 0 20px rgba(0, 255, 234, 0.5);
     font-family: "IBM Plex Mono", monospace;
     font-weight: 500;
-    font-style: normal;
 }
 
 #me-h1 {
@@ -901,7 +899,6 @@ nav ul li a:hover{
     text-shadow: 0 0 20px rgba(255, 92, 255, 0.5);
     font-family: "IBM Plex Mono", monospace;
     font-weight: 500;
-    font-style: normal;
 }
 
 #about-myName {
@@ -945,12 +942,11 @@ nav ul li a:hover{
     width: 100%;
     aspect-ratio: 1;
     filter: saturate(1.15) contrast(1.05) brightness(1.02);
-
 }
 
 .about-img img {
     width: 100%;
-    height: 130%;
+    height: 150%;
     border-radius: 50%;
     object-fit: cover;
     padding: 15px;
@@ -964,7 +960,6 @@ nav ul li a:hover{
 
 .about-img img:hover {
     transform: scale(1.05);
-    filter: saturate(1.15) contrast(1.05) brightness(1.02);
 }
 
 @keyframes borderMove {
@@ -1013,13 +1008,13 @@ nav ul li a:hover{
 /* Text Content - Right Side */
 .about-text-container {
     flex: 1;
-    animation: slideInRight 2s ease;
+    animation: slideInRight 1.5s ease;
 }
 
 @keyframes slideInRight {
     from {
         opacity: 0;
-        transform: translateX(500px);
+        transform: translateX(50px);
     }
     to {
         opacity: 1;
@@ -1037,7 +1032,7 @@ nav ul li a:hover{
     border: 1px solid rgba(0, 255, 234, 0.2);
     backdrop-filter: blur(10px);
     transition: all 0.3s ease;
-    animation: fadeInUp 5s ease;
+    animation: fadeInUp 0.8s ease;
     animation-fill-mode: both;
 }
 
@@ -1072,7 +1067,7 @@ nav ul li a:hover{
 }
 
 .info-card h3::before {
-    content: "*";
+    content: "★";
     color: #FF5CFF;
     font-size: 1.8rem;
 }
@@ -1081,9 +1076,7 @@ nav ul li a:hover{
     line-height: 1.8;
     color: white;
     font-family: "Roboto Mono", monospace;
-    font-optical-sizing: auto;
     font-weight: 400;
-    font-style: normal;
 }
 
 .highlight {
@@ -1108,6 +1101,11 @@ nav ul li a:hover{
     color: #00FFE5;
     font-size: 14px;
     font-weight: bold;
+    text-decoration: none;
+}
+
+#about-mail:hover {
+    text-decoration: underline;
 }
 
 .contact-item {
@@ -1128,9 +1126,7 @@ nav ul li a:hover{
 .contact-item strong {
     color: #00FFEA;
     font-family: "Roboto Mono", monospace;
-    font-optical-sizing: auto;
     font-weight: 400;
-    font-style: normal;
 }
 
 /* Buttons */
@@ -1141,32 +1137,66 @@ nav ul li a:hover{
     flex-wrap: wrap;
 }
 
-.btn {
+.btn-primary, .btn-secondary {
     padding: 15px 35px;
-    border-radius: 30px;
+    border-radius: 50px;
     text-decoration: none;
-    font-weight: 600;
-    transition: all 0.3s ease;
+    font-weight: 700;
+    font-size: 15px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     overflow: hidden;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-family: "IBM Plex Mono", monospace;
 }
 
 .btn-primary {
-    background: linear-gradient(90deg, #00FFEA, #FF5CFF);
-    color: #090979;
-    font-weight: bold;
-    font-size: 15px;
+    background: linear-gradient(135deg, #00FFEA 0%, #FF5CFF 100%);
+    color: #0a0a0a;
+    box-shadow: 0 8px 25px rgba(0, 255, 234, 0.4);
+    border: none;
+}
+
+.btn-primary::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.6s ease;
+}
+
+.btn-primary:hover::before {
+    left: 100%;
+}
+
+.btn-primary:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 15px 40px rgba(0, 255, 234, 0.6);
+    background: linear-gradient(135deg, #00FFD5 0%, #FF4FE6 100%);
+}
+
+.btn-primary:active {
+    transform: translateY(-2px) scale(1.02);
 }
 
 .btn-secondary {
-    background: transparent;
+    background: rgba(0, 255, 234, 0.05);
     border: 2px solid #00FFEA;
     color: #00FFEA;
-    font-weight: bold;
-    font-size: 15px;
+    box-shadow: 0 0 20px rgba(0, 255, 234, 0.2);
+    backdrop-filter: blur(10px);
 }
 
-.btn::before {
+.btn-secondary::after {
     content: "";
     position: absolute;
     top: 50%;
@@ -1174,26 +1204,28 @@ nav ul li a:hover{
     width: 0;
     height: 0;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.3);
+    background: rgba(0, 255, 234, 0.2);
     transform: translate(-50%, -50%);
-    transition: width 0.6s, height 0.6s;
+    transition: width 0.5s ease, height 0.5s ease;
+    z-index: -1;
 }
 
-.btn:hover::before {
-    width: 300px;
-    height: 300px;
+.btn-secondary:hover::after {
+    width: 400px;
+    height: 400px;
 }
 
-.btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 30px rgba(0, 255, 234, 0.4);
+.btn-secondary:hover {
+    transform: translateY(-5px) scale(1.05);
+    border-color: #FF5CFF;
+    color: #FF5CFF;
+    box-shadow: 0 15px 40px rgba(255, 92, 255, 0.5);
+    background: rgba(255, 92, 255, 0.1);
 }
 
-.skills-container {
-    margin-top: 30px;
+.btn-secondary:active {
+    transform: translateY(-2px) scale(1.02);
 }
-
-
 
 /* Laptop Large = 1440px */
 @media (max-width: 1440px) {
@@ -1225,8 +1257,10 @@ nav ul li a:hover{
         margin-left: 30px;
         padding: 25px;
     }
-    .btn {
+
+    .btn-primary, .btn-secondary {
         padding: 14px 32px;
+        font-size: 14px;
     }
 }
 
@@ -1274,8 +1308,9 @@ nav ul li a:hover{
         justify-content: center;
     }
 
-    .btn {
-        padding: 12px 29px;
+    .btn-primary, .btn-secondary {
+        padding: 13px 28px;
+        font-size: 13px;
     }
 }
 
@@ -1345,16 +1380,17 @@ nav ul li a:hover{
 
     .about-buttons {
         flex-direction: column;
-        gap: 12px;
-    }
-
-    .btn {
+        gap: 15px;
         width: 100%;
-        padding: 10px 20px;
-        font-size: 0.9rem;
-        text-align: center;
     }
 
+    .btn-primary, .btn-secondary {
+        width: 100%;
+        padding: 15px 30px;
+        font-size: 13px;
+        text-align: center;
+        justify-content: center;
+    }
 }
 
 /* Mobile Medium = 375px */
@@ -1420,12 +1456,10 @@ nav ul li a:hover{
         font-size: 11px;
     }
 
-
-    .btn-btn-primary{
-        padding: 10px 10px;
-    }
-    .btn-btn-secondary{
-        padding: 10px 00px;
+    .btn-primary, .btn-secondary {
+        width: 100%;
+        padding: 14px 28px;
+        font-size: 12px;
     }
 }
 
@@ -1505,66 +1539,107 @@ nav ul li a:hover{
     }
 
     .about-buttons {
-        gap: 10px;
+        gap: 12px;
         margin-top: 20px;
     }
 
-    .btn {
-        padding: 10px 20px;
-        font-size: 0.8rem;
-        border-radius: 25px;
-    }
-
-    .btn-btn-primary{
-        padding: 10px 10px;
-    }
-    .btn-btn-secondary{
-        padding: 10px 10px;
-    }
-
-    .skills-container {
-        margin-top: 20px;
+    .btn-primary, .btn-secondary {
+        width: 100%;
+        padding: 13px 25px;
+        font-size: 11px;
+        border-radius: 40px;
+        letter-spacing: 0.3px;
     }
 }
-/*@media (max-width: 425px) {*/
-/*    .about-buttons {*/
-/*        flex-direction: column;*/
-/*        align-items: center;*/
-/*        gap: 12px;*/
-/*    }*/
 
-/*    .btn {*/
-/*        width: 100%;*/
-/*        padding: 13px 25px;*/
-/*        font-size: 0.9rem;*/
-/*    }*/
-/*}*/
-/*@media (max-width: 375px) {*/
-/*    .btn {*/
-/*        width: 100%;*/
-/*        padding: 12px 22px;*/
-/*        font-size: 0.85rem;*/
-/*    }*/
-/*}*/
-/*@media (max-width: 320px) {*/
-/*    .about-buttons {*/
-/*        flex-direction: column;*/
-/*        gap: 10px;*/
-/*        margin-top: 20px;*/
-/*    }*/
+/*stack-container*/
 
-/*    .btn {*/
-/*        width: 100%;*/
-/*        padding: 10px 20px;*/
-/*        font-size: 0.8rem;*/
-/*        border-radius: 25px;*/
-/*    }*/
 
-/*    .btn-secondary {*/
-/*        border-width: 1.5px;*/
-/*    }*/
-/*}*/
 
+.stack-container {
+    background:transparent;
+    border-radius:20px;
+    padding:30px;
+    margin:40px auto;
+    max-width:1200px;
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    justify-content:center;
+    gap:50px;
+    box-shadow: rgba(240, 46, 170, 0.4) 0px 5px, rgba(240, 46, 170, 0.3) 0px 10px, rgba(240, 46, 170, 0.2) 0px 15px, rgba(240, 46, 170, 0.1) 0px 20px, rgba(240, 46, 170, 0.05) 0px 25px;
+    border:8px solid deepskyblue;
+    overflow:hidden;
+    position:relative;
+}
+.stack-title {
+    font-size:2em;
+    font-weight:bold;
+    color:#fff;
+    /*white-space:nowrap;*/
+    min-width:120px;
+}
+.tech-row {
+    flex:1;
+    min-width:300px;
+    overflow:hidden;
+    position:relative;
+}
+.tech-marquee {
+    display:flex;
+    gap:20px;
+    animation:marquee 25s linear infinite;
+    white-space:nowrap;
+}
+.tech-marquee:hover { animation-play-state:paused; }
+
+.tech-item {
+    flex:0 0 auto;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    min-width:60px;
+    text-align:center;
+}
+.tech-item img {
+    width:40px;
+    height:40px;
+    object-fit:contain;
+    filter:drop-shadow(0 2px 4px rgba(0,0,0,.3));
+}
+.tech-name {
+    font-size:0.75em;
+    color:#ccc;
+    font-weight:500;
+}
+
+/* Duplicate icons for smooth loop */
+.tech-marquee::after {
+    content:"";
+    display:block;
+    width:100%;
+    flex-shrink:0;
+}
+
+/* Mobile Fix */
+@media (max-width:768px) {
+    .stack-container {
+        flex-direction:column;
+        text-align:center;
+        padding:20px;
+        gap:20px;
+    }
+    .stack-title { font-size:1.6em; }
+    .tech-marquee { gap:15px; animation-duration:30s; }
+    .tech-item img { width:30px; height:30px; }
+    .tech-name { font-size:0.7em; }
+}
+
+/* Animation */
+@keyframes marquee {
+    0% { transform:translateX(0); }
+    100% { transform:translateX(-50%); }
+}
 
 
 
@@ -3809,7 +3884,7 @@ img {
     gap: 30px;
 }
 
-/* ===== Contact Form Styles ===== */
+
 #contactForm {
     max-width: 5000px;
 
